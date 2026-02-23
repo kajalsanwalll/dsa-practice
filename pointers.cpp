@@ -37,4 +37,7 @@ int main() {
 
  // delete []p2; // release dynamically allocated memory after using in c++
  // free(p2); // release memory in c language
+
+
+ //size of a pointer is independent of its data type. pointer takes 8 bytes of memory whether int* or char* or struct rect *
 }
