@@ -9,12 +9,12 @@ int main() {
     
  // pointer to a variable 'a'
  int *p; // declaration of a pointer p
- p = &a; // initialising a pointer (value of a)
- cout << *p << endl;
- cout << a << endl;
+ p = &a; // initialising a pointer (address of a)
+ cout << "value of pointer is:" << *p << endl;
+ cout << "value of a is:" << a << endl;
 
  p = new int[4];
- cout << sizeof(*p) << endl; 
+ cout << "size of pointer is:" << sizeof(*p) << endl; 
 
  //pointer to an array
  int A[5] = {2,4,6,8,10};
@@ -22,7 +22,7 @@ int main() {
  p1 = A; // initialisation doesnt need & in array
 
  for(int i=0; i<5; i++)
- cout << p1[i] << endl;
+ cout << "pointer to an array's values are:"<< p1[i] << endl;
 
 
  // create an array inside heap memory
@@ -33,11 +33,28 @@ int main() {
  p2[0]=1; p2[1]=2; p2[2] = 3; p2[3]= 4; p2[4] = 6;
 
  for(int i=0; i<5; i++)
- cout << p1[i] << endl;
+ cout << "heap memory's pointer's array values are:" << p1[i] << endl;
 
  // delete []p2; // release dynamically allocated memory after using in c++
  // free(p2); // release memory in c language
 
 
  //size of a pointer is independent of its data type. pointer takes 8 bytes of memory whether int* or char* or struct rect *
+
+ //Pointer to a structure
+ struct Rectangle
+ {
+    int length;
+    int breadth;
+ };
+
+ struct Rectangle *p4; // declared pointer
+
+ p4 = (struct Rectangle *)malloc(sizeof(struct Rectangle)); //allocated inside heap memory
+ p4 ->breadth = 7;
+ p4->length = 2;
+
+ cout << "pointer to a structure's values:" << endl;  
+ cout << "Length: " << p4->length << ", Breadth: " << p4->breadth << endl;
+ 
 }
