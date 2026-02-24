@@ -48,13 +48,17 @@ int main() {
     int breadth;
  };
 
- struct Rectangle *p4; // declared pointer
-
- p4 = (struct Rectangle *)malloc(sizeof(struct Rectangle)); //allocated inside heap memory
- p4 ->breadth = 7;
- p4->length = 2;
+ struct Rectangle r3 = {10,5}; // initialised structure r3
+ struct Rectangle *p4 = &r3; // declared pointer
+ p4->breadth=7; // arrow used to get element/ access element
 
  cout << "pointer to a structure's values:" << endl;  
  cout << "Length: " << p4->length << ", Breadth: " << p4->breadth << endl;
+
+ // now in heap memory structure is being created so
+ struct Rectangle r5;
+ struct Rectangle *p5 = &r5;
+ p5 = (struct Rectangle *)malloc(sizeof(struct Rectangle)); //allocated inside heap memory
+
  
 }
