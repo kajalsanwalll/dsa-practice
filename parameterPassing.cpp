@@ -23,18 +23,19 @@ using namespace std;
 
 int main(){
 
-    //pass by reference to swap (c++ allows it by reference)
+    //pass by address to swap
     int a,b;
     a=10;
     b=20;
     swap(&a,&b);
-    cout << a << "," << b << endl;
+    cout << "pass by address swap:" << a << "," << b << endl;
 
+     //pass by reference to swap (c++ allows it by reference)
     int a1,b1;
     a1=8;
     b1=9;
     swap1(a1,b1);
-    cout << a1 << "," << b1 << endl;
+    cout << "pass by reference swap:" << a1 << "," << b1 << endl;
 
     
 }
