@@ -47,7 +47,8 @@ struct Rectangle {
     int breadth;
 };
 
-int area(struct Rectangle r1){
+int area(struct Rectangle r1) // &r1 can be written to have call by reference. this is call by value rn
+{ 
     return r1.length* r1.breadth;
 }
 
