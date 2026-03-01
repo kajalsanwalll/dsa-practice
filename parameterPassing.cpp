@@ -52,6 +52,9 @@ int area(struct Rectangle r1) // &r1 can be written to have call by reference. t
     return r1.length* r1.breadth;
 }
 
+// array inside a structure can be passed through Pass by Value 
+// otherwise array can only be passed by Pass by Address
+
 
 int main(){
 
