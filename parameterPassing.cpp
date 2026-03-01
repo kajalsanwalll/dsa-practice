@@ -41,6 +41,16 @@ int * func(int size){
 
 }
 
+// structure as a parameter
+struct Rectangle {
+    int length;
+    int breadth;
+};
+
+int area(struct Rectangle r1){
+    return r1.length* r1.breadth;
+}
+
 
 int main(){
 
@@ -70,6 +80,9 @@ int main(){
     for(int i=0; i<sz; i++)
     cout << "array returned by func: " << A1[i] << endl;
 
+    //structure as a parameter
+    struct Rectangle r = {10,5};
+    cout << "Area of rectangle r: " << area(r) << endl;
 
 
 }
