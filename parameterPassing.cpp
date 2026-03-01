@@ -19,21 +19,24 @@ using namespace std;
         y1= temp;
         
     }
-    
+
 // array as a parameter
-void fun(int A[], int n){
+void fun(int *A, int n){
     int i;
 
-    A[0] = 23;
+    A[0] = 23; //value changed through address
      
     for(i=0; i<n; i++)
     cout << "array as a parameter: " << A[i] << endl;
 }
 
 //function returning an array
-int * func(int n){
+int * func(int size){
     int *p;
-    p = (int *)malloc(n*sizeof(int));
+    p = new int[size];
+
+    for(int i=0; i<5; i++)
+    p[i] = i+1;
     return p;
 
 }
@@ -61,11 +64,12 @@ int main(){
     fun(A,n);
 
     //function returning an array
-    int *A1;
-    int j;
-    A1= func(5);
+    int *A1, sz=5;
+    A1= func(sz);
 
-    for(j=0; j<5; j++)
-    cout << "func returning an array: " << A1[j] << endl;
+    for(int i=0; i<sz; i++)
+    cout << "array returned by func: " << A1[i] << endl;
+
+
 
 }
