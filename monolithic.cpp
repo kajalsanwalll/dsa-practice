@@ -13,6 +13,12 @@ int main(){
     cout<<"enter length and breadth: " << endl;
     cin >> length >> breadth;
 
+    int area = length*breadth;
+    int peri = 2*(length+breadth);
+
+    cout << "area: " << area << endl;
+    cout << "perimeter: " << peri <<endl;
+
 
     return 0;
 
