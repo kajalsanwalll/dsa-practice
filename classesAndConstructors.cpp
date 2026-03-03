@@ -17,7 +17,7 @@ class Rectangle
     }
 
     //change length function
-    void changeLength(int l){
+    void setLength(int l){
         length=l;
     }
 };
@@ -26,6 +26,6 @@ int main(){
     Rectangle r(10,5);
 
     r.area();
-    r.changeLength(7);
+    r.setLength(7);
 
 }
