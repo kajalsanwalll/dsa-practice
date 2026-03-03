@@ -16,10 +16,17 @@ class Rectangle
         return length*breadth;
     }
 
+    //get length
+    int getLength()
+    {
+        return length;
+    }
     //change length function
     void setLength(int l){
         length=l;
     }
+
+   // ~Rectangle(); //destructor
 };
 
 int main(){
