@@ -1,5 +1,4 @@
 // generic classes written inorder to make them work for all data types.
-
 #include <iostream>
 using namespace std;
 
