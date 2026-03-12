@@ -45,4 +45,3 @@ int main(){
     Arithmetic<float> ar1(1.11,2.22);
     cout << "add float nos: " << ar1.add() <<endl;
 }
-
