@@ -11,18 +11,29 @@ int fun(int n){
     if (n>0){
 
         x++;
-        cout << "n before is:" << n << endl;
-        fun(n - 1) + x;
-        cout << "n after is:" << n << endl;
+       
+        return fun(n - 1) + x;
+        
     }
     
     return 0;
 }
 
+int fun2(int n){
+    if(n>0){
+        return fun2(n-1) +n;
+    }
+    return 0;
+}
+
 int main(){
-    int y=3;
+    int y1,y2;
     
-    fun(y);
+    y2 = fun2(5);
+    cout <<"y2 is:" << y2 <<endl;
+
+    y1 = fun(3);
+    cout << "y1 is:" << y1 << endl;
 
     return 0;
 }
