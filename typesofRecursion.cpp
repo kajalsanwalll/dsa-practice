@@ -56,7 +56,10 @@ int main(){
 
     funA(20);
 
-    funN(95);
+    int r;
+
+    r = funN(95);
+    cout << "value of final ans of nested: " << r << endl;
 
     return 0;
 }
