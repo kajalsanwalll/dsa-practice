@@ -13,10 +13,19 @@ int Sum(int n){
     }
 }
 
+//sum using formula = n(n+1)/2
+int sum(int n){
+    return n*(n+1)/2;
+}
+
 int main(){
     int s;
     s = Sum(15);
     cout << "sum of 15 natural nos is: " << s << endl;
+
+    int S;
+    S = sum(15);
+    cout << "sum using formula: " << S << endl;
                         
 }
 
