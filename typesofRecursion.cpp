@@ -8,7 +8,9 @@ void fun(int n){
     
     if(n>0){
 
-
+        cout << "value of n:" << n << endl;
+        fun(n-1);
+        fun(n-1);
 
     }
 }
