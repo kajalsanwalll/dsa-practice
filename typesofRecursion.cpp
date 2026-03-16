@@ -38,11 +38,25 @@ void funB(int n){
 
 }
 
+//nested recursion = function calling a function with a function as a parameter
+int funN(int n){
+    if(n>100){
+
+        printf("%d\n", n-10);
+        return n-10;
+
+    }else{
+        return funN(funN(n+11));
+    }
+}
+
 int main(){
 
     fun(3);
 
     funA(20);
+
+    funN(95);
 
     return 0;
 }
