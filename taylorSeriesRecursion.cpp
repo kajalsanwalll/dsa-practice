@@ -20,8 +20,23 @@ double e(int x, int n){
     }
 }
 
+// taylor series with horner fashion with loop
+int e1(int x, int n){
+
+    int s = 1;
+
+    for(;n>0 ; n--){
+        s = (1+x/n)*s;
+    }
+
+    return s;
+}
+
+// taylor series with recursion using horner 
+
 int main(){
 
     printf("%lf\n", e(4,16));
+    printf("%d\n", e1(4,16));
 
 }
