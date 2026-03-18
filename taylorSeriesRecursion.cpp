@@ -33,8 +33,8 @@ int e1(int x, int n){
 }
 
 // taylor series with recursion using horner 
-int e2(int x, int n){
-    static int s1=1;
+double e2(int x, int n){
+    static double s1=1;
 
     if(n==0)
         return s1;
@@ -47,6 +47,6 @@ int main(){
 
     printf("%lf\n", e(4,16));
     printf("%d\n", e1(4,16));
-    printf("%d\n", e2(4,16));
+    printf("%lf\n", e2(4,16));
 
 }
