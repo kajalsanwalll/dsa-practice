@@ -22,6 +22,6 @@ double e(int x, int n){
 
 int main(){
 
-    printf("%lf\n", e(4,10));
+    printf("%lf\n", e(4,16));
 
 }
