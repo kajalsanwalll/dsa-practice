@@ -21,12 +21,12 @@ double e(int x, int n){
 }
 
 // taylor series with horner fashion with loop
-int e1(int x, int n){
+double e1(int x, int n){
 
-    int s = 1;
+    double s = 1;
 
     for(;n>0 ; n--){
-        s = (1+x/n)*s;
+        s = 1+x*s/n;
     }
 
     return s;
@@ -46,7 +46,7 @@ double e2(int x, int n){
 int main(){
 
     printf("%lf\n", e(4,16));
-    printf("%d\n", e1(4,16));
+    printf("%lf\n", e1(4,16));
     printf("%lf\n", e2(4,16));
 
 }
