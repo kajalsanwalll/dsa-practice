@@ -38,7 +38,7 @@ double e2(int x, int n){
 
     if(n==0)
         return s1;
-        s1 = (1+x/n)*s1;
+        s1 = 1+x*s1/n;
 
     return e2(x, n-1);
     
