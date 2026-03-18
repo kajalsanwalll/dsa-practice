@@ -33,10 +33,20 @@ int e1(int x, int n){
 }
 
 // taylor series with recursion using horner 
+int e2(int x, int n){
+    static int s1=1;
 
+    if(n==0)
+        return s1;
+        s1 = (1+x/n)*s1;
+
+    return e2(x, n-1);
+    
+}
 int main(){
 
     printf("%lf\n", e(4,16));
     printf("%d\n", e1(4,16));
+    printf("%d\n", e2(4,16));
 
 }
