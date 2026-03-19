@@ -32,7 +32,7 @@ double e1(int x, int n){
     return s;
 }
 
-// taylor series with recursion using horner 
+// taylor series with recursion using horner's method
 double e2(int x, int n){
     static double s1=1;
 
