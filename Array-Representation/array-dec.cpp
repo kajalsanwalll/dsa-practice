@@ -35,5 +35,27 @@ int main(){
         cout << "value of array in heap: " << p[i] << endl;
     }
 
+    //increase size of array in heap memory
+    int *p1;
+    int *p2;
+    int j;
+
+    p1= new int[5];
+    p1[0]= 1;p1[1]= 1;p1[2]= 1;p1[3]= 1;p1[4]= 1;
+
+    p2 = new int[10];
+
+    for(j=0; j<5; j++){
+        p2[j] = p1[j];
+    }
+
+    free(p1);
+    p1=p2;
+    p2= NULL;
+
+    for(i=0;i<5;i++){
+        cout << p1[i]<< endl;
+    }
+
     return 0;
 }
