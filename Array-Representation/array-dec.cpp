@@ -11,5 +11,5 @@ int main(){
 
     int A3[5] = {0}; // all zeros initialised
 
-
+    return 0;
 }
