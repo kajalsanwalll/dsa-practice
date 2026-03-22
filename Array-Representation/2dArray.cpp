@@ -32,7 +32,27 @@ int main(){
 
         for(j=0; j<4; j++){
 
-            cout<< A[i][j] ;
+            cout<< A[i][j] ;  //for A
+           
+        }
+        printf("\n");
+    }
+
+    for(i=0; i<3; i++){
+
+        for(j=0; j<4; j++){
+
+            cout<< B[i][j] ;   // for B
+           
+        }
+        printf("\n");
+    }
+
+    for(i=0; i<3; i++){
+
+        for(j=0; j<4; j++){
+
+            cout<< C[i][j] ;   //for C
            
         }
         printf("\n");
