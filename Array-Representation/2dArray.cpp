@@ -4,6 +4,8 @@ using namespace std;
 
 int main(){
 
+    int i,j;
+
     //2d array inside stack 
     int A[3][4] = {{1,2,3,4},{3,4,5,5},{4,5,6,6}};  //3 rows 4 columns
 
@@ -24,6 +26,17 @@ int main(){
     C[1] = new int[4];  // number of columns = 4 in heap
     C[2] = new int[4];
     
+
+    // nested loops used to access 2d arrays
+    for(i=0; i<3; i++){
+
+        for(j=0; j<4; j++){
+
+            cout<< A[i][j] ;
+           
+        }
+        printf("\n");
+    }
 
     return 0;
 }
