@@ -74,13 +74,14 @@ int Delete(struct Array *array, int index ){
     if(index>=0 && index<= array->length){
         
         x = array->A[index]; // value stored 
-        
+
         for(i=index; i<array->length-1; i++){
 
             array->A[i] = array->A[i+1];
 
         }
         array->length--;
+        return x;
     }
 
 
