@@ -50,6 +50,22 @@ void Append(struct Array *array, int x) // *array because call by address and in
     }
 }
 
+void Insert(struct Array *array, int index, int x){
+
+    int i;
+
+    if( index >= 0 && index <= array->length){
+
+        for(i=array->length; i>index; i--){
+
+            array->A[i] = array->A[i-1];
+
+        }
+        array->A[index] = x;
+        array->length++;
+    }
+}
+
 int main(){
 
 
@@ -81,6 +97,7 @@ int main(){
     struct Array array={{2,3,4,5}, 10, 4};
 
     Append(&array, 10);
+    Insert(&array, 4,15);
     Display(array);
 
 
