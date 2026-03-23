@@ -66,6 +66,27 @@ void Insert(struct Array *array, int index, int x){
     }
 }
 
+int Delete(struct Array *array, int index ){
+
+    int x=0; // for storing the deleted value
+    int i;
+
+    if(index>=0 && index<= array->length){
+        
+        x = array->A[index]; // value stored 
+        
+        for(i=index; i<array->length-1; i++){
+
+            array->A[i] = array->A[i+1];
+
+        }
+        array->length--;
+    }
+
+
+    return 0;
+}
+
 int main(){
 
 
@@ -98,6 +119,8 @@ int main(){
 
     Append(&array, 10);
     Insert(&array, 4,15);
+    Display(array);
+    Delete(&array,1);
     Display(array);
 
 
