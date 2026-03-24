@@ -84,6 +84,24 @@ int Delete(struct Array *array, int index ){
         return x;
     }
 
+    return 0;
+}
+
+//get set methods
+int get(struct Array array, int index){
+
+    if(index>=0 && index< array.length){
+        return array.A[index];
+    }
+
+    return 0;
+}
+
+int set(struct Array array, int index, int x){
+
+    if(index>=0 && index< array.length){
+        array.A[index] = x;
+    }
 
     return 0;
 }
