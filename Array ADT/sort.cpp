@@ -27,7 +27,7 @@ void InsertSort(struct Array *arr, int x){
 
     if(arr->length == arr->size) return; 
 
-    while(arr->A[i] > x)
+    while(i >= 0 && arr->A[i] > x)
     {
         arr->A[i+1] = arr->A[i];
         i--;
@@ -37,11 +37,27 @@ void InsertSort(struct Array *arr, int x){
     arr->length++;
 }
 
+// check if an array is sorted or not
+int isSorted(struct Array arr){
+
+    int i;
+    
+    for(i=0;i<arr.length-1;i++){
+
+        if(arr.A[i] > arr.A[i+1]){
+            return 0;  //false 
+        }
+    }
+
+    return 1;  //true
+}
+
 int main(){
 
     struct Array arr={{2,4,5,6}, 10, 4};
 
-    InsertSort(&arr,3);
+    printf("%d\n", isSorted(arr));
+    InsertSort(&arr,1);
     Display(arr);
 
     return 0;
