@@ -136,6 +136,21 @@ int min(struct Array array, int min){
     return min;
 }
 
+//sum function
+int sum(struct Array array, int total){
+
+    total=0;
+    int i;
+
+    for(i=0;i<array.length; i++){
+
+        total = total + array.A[i];
+    }
+
+    return total;
+
+}
+
 int main(){
 
 
@@ -178,6 +193,7 @@ int main(){
 
     printf("\n%d\n", min(array,0));
     printf("\n%d\n", max(array,0));
+    printf("\n%d\n", sum(array,0));
 
 
     return 0;
