@@ -97,10 +97,10 @@ int get(struct Array array, int index){
     return 0;
 }
 
-int set(struct Array array, int index, int x){
+int set(struct Array *array, int index, int x){
 
-    if(index>=0 && index< array.length){
-        array.A[index] = x;
+    if(index>=0 && index< array->length){
+        array->A[index] = x;
     }
 
     return 0;
@@ -140,6 +140,10 @@ int main(){
     Insert(&array, 4,15);
     Display(array);
     Delete(&array,1);
+    Display(array);
+
+    printf("\n%d\n", get(array,3));
+    set(&array,2,99);
     Display(array);
 
 
