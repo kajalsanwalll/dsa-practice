@@ -106,6 +106,16 @@ int set(struct Array *array, int index, int x){
     return 0;
 }
 
+int reverse(struct Array *array){
+
+    int i,j;
+    for(i=0,j=array->length-1;i<j;i++,j--){
+
+        swap(array->A[i], array->A[j]);
+    }
+    
+    return 0;
+}
 
 //max and min
 int max(struct Array array, int max){
@@ -210,6 +220,8 @@ int main(){
     printf("\n%d\n", max(array,0));
     printf("\n%d\n", sum(array,0));
     printf("\n%d\n", avg(array,0));
+    reverse(&array);
+    Display(array);
 
     return 0;
 }
