@@ -106,6 +106,8 @@ int set(struct Array *array, int index, int x){
     return 0;
 }
 
+
+//reverse using swap
 int reverse(struct Array *array){
 
     int i,j;
@@ -116,6 +118,29 @@ int reverse(struct Array *array){
     
     return 0;
 }
+
+//reverse using auxillary array
+int reverse2(struct Array *array){
+    
+    int *B;
+    int i,j;
+
+    B = (int *)malloc(array->length*sizeof(int));
+
+    for(i=array->length-1,j=0;i>=0;i--,j++){
+
+        B[j] = array->A[i];
+    }
+
+    for(i=0;i< array->length;i++){
+
+        array->A[i]= B[i];
+    }
+
+    return 0;
+
+}
+
 
 //max and min
 int max(struct Array array, int max){
@@ -221,6 +246,7 @@ int main(){
     printf("\n%d\n", sum(array,0));
     printf("\n%d\n", avg(array,0));
     reverse(&array);
+    reverse2(&array);
     Display(array);
 
     return 0;
