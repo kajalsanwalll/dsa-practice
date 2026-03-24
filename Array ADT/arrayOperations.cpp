@@ -106,6 +106,36 @@ int set(struct Array *array, int index, int x){
     return 0;
 }
 
+
+//max and min
+int max(struct Array array, int max){
+
+    max=0;
+    int i;
+    for(i=0; i< array.length; i++){
+
+        if(array.A[i]> max){
+            max = array.A[i];
+        }
+    }
+
+    return max;
+}
+
+int min(struct Array array, int min){
+
+    min=0;
+    int i;
+    for(i=0; i< array.length; i++){
+
+        if(array.A[i] < min){
+            min = array.A[i];
+        }
+    }
+
+    return min;
+}
+
 int main(){
 
 
@@ -145,6 +175,9 @@ int main(){
     printf("\n%d\n", get(array,3));
     set(&array,2,99);
     Display(array);
+
+    printf("\n%d\n", min(array,0));
+    printf("\n%d\n", max(array,0));
 
 
     return 0;
