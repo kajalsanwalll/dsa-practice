@@ -3,6 +3,8 @@
 #include <iostream>
 using namespace std;
 
+
+// A class in cpp
 class Array{
 
     //data members - private 
@@ -27,10 +29,35 @@ class Array{
 
             size= sz;
             length=0;
+            A= new int[size];
         }
-          
 
+        //destructor
+        ~Array(){
+
+            delete []A;  //free heap memory
+        }
+
+        //functions
+        void Display();  // not taking parameters because it's in a class
+        void Insert(int index, int x);
+        int Delete(int index);
+          
 };
+
+void Array::Display(){
+
+    for(int i=0; i<length;i++){
+        cout << A[i] << endl;
+    }
+}
+
+void Array::Insert(int index, int x){
+
+    if(index>=0 && index< length){
+        
+    }
+}
 
 
 int main(){
