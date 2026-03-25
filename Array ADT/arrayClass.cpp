@@ -20,7 +20,7 @@ class Array{
         // non-parameterized constructor
         Array(){
 
-            size:10;
+            size=10;
             A= new int[10];
             length=0;
         }
@@ -55,7 +55,7 @@ void Array::Display(){
 void Array::Insert(int index, int x){
 
     if(index>=0 && index< length){
-        
+
     }
 }
 
