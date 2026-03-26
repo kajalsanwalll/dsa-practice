@@ -40,6 +40,26 @@ int Missing(struct Array arr1,int l, int h, int n){
     return i+diff;
 }
 
+// find multiple missing elements 
+int Multiplemiss(struct Array arr2, int l, int h, int n){
+
+    int i;
+    int diff=6;
+
+    for(i=0; i<n;i++){
+
+        if(arr2.A[i]-i != diff){
+
+            while(diff<arr2.A[i]-i){
+                cout << "missing numbers are: " << i+ diff << endl;
+                diff++;
+            }
+        }
+    }
+
+    return 0;
+}
+
 
 int main(){
 
@@ -48,6 +68,9 @@ int main(){
 
     struct Array arr1={{6,7,8,9,10,12,13,14,15,16,17},11,11};
     printf("%d",Missing(arr1,6,15,11));
+
+    struct Array arr2={{6,7,8,9,11,12,15,16,17,18,19},11,11};
+    printf("%d",Multiplemiss(arr2,6,19,11));
 
     return 0;
 }
