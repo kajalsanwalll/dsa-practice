@@ -85,11 +85,11 @@ T Array<T>::Delete(int index){
 
 int main(){
 
-    Array<int> arr(10);
+    Array<float> arr(10);
 
-    arr.Insert(0,5);
-    arr.Insert(1,6);
-    arr.Insert(2,7);
+    arr.Insert(0,5.3);
+    arr.Insert(1,6.6);
+    arr.Insert(2,7.8);
     arr.Display();
     cout << endl << arr.Delete(1) << endl;
     arr.Display();
