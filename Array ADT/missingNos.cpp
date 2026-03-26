@@ -5,6 +5,7 @@ struct Array{
 
     int A[11];
     int size;
+    int H[20]={0};
     int length;
 };
 // if natural numbers sorted array starting from 1
@@ -60,6 +61,27 @@ int Multiplemiss(struct Array arr2, int l, int h, int n){
     return 0;
 }
 
+//finding multiple missing numbers using hash table/ bitset
+int hashMiss(struct Array arr2, int l, int h, int n){
+
+    int i;
+
+    for(i=0;i<n;i++){
+        arr2.H[arr2.A[i]]++;
+    }
+
+    for(i=l;i<=h;i++){
+
+        if(arr2.H[i]==0){
+ 
+            cout << "missing num using hash: " << i << endl;
+        
+        }
+    }
+
+    return 0;
+}
+
 
 int main(){
 
@@ -71,6 +93,7 @@ int main(){
 
     struct Array arr2={{6,7,8,9,11,12,15,16,17,18,19},11,11};
     printf("%d",Multiplemiss(arr2,6,19,11));
+    printf("%d",hashMiss(arr2,6,19,11));
 
     return 0;
 }
