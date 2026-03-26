@@ -48,13 +48,13 @@ class Array{
 void Array::Display(){
 
     for(int i=0; i<length;i++){
-        cout << A[i] << endl;
+        cout << " "<< A[i] << " " ;
     }
 }
 
 void Array::Insert(int index, int x){
 
-    if(index>=0 && index< length){
+    if(index>=0 && index<= length){
 
         for(int i=length-1;i>=index;i--){
             A[i+1] = A[i];
@@ -82,7 +82,14 @@ int Array::Delete(int index){
 
 int main(){
 
+    Array arr(10);
 
+    arr.Insert(0,5);
+    arr.Insert(1,6);
+    arr.Insert(2,7);
+    arr.Display();
+    cout << endl << arr.Delete(1) << endl;
+    arr.Display();
 
 
     return 0;
