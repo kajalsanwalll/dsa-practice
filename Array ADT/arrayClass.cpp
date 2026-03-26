@@ -56,6 +56,11 @@ void Array::Insert(int index, int x){
 
     if(index>=0 && index< length){
 
+        for(int i=length-1;i>=index;i--){
+            A[i+1] = A[i];
+        }
+        A[index]= x;
+        length++;
     }
 }
 
