@@ -64,6 +64,21 @@ void Array::Insert(int index, int x){
     }
 }
 
+int Array::Delete(int index){
+
+    int x=0;
+    if(index>=0 && index< length){
+
+        x= A[index];
+        for(int i=index;i<length-1;i++){
+             
+            A[i] = A[i+1];
+        }
+        length--;
+    }
+    return x;
+}
+
 
 int main(){
 
