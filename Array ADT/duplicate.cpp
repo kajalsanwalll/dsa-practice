@@ -5,8 +5,8 @@ struct Array{
 
     int A[11];
     int size;
-   // int H[20]={0};
     int length;
+    int H[40]={0};
 };
 
 int duplicate(struct Array arr, int n){
@@ -43,11 +43,30 @@ int countDuplicates(struct Array arr, int n){
     return 0;
 }
 
+//duplicates using Hash table
+int Hashduplicates(struct Array arr, int n){
+
+    int i;
+    for(i=0; i< n; i++){
+        arr.H[arr.A[i]]++;
+    }
+
+    for(i=0;i< 40; i++){
+        if(arr.H[i]>1){
+            cout << i << " is duplicated " << arr.H[i] <<" times" << endl;
+        }
+    }
+
+    return 0;
+}
+
+
 int main(){
 
     struct Array arr={{3,6,8,8,10,12,15,15,15,18},10,10};
-    duplicate(arr, 10);
-    countDuplicates(arr,10);
+    //duplicate(arr, 10);
+    //countDuplicates(arr,10);
+    Hashduplicates(arr, arr.length );
 
     return 0;
 }
