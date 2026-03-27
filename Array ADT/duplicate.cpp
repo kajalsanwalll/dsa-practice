@@ -87,16 +87,34 @@ int UnsortedDuplicates(struct Array arr1, int n){
     return 0;
 }
 
+//UNSORTED ARRAY find, count duplicates METHOD2 using hash table
+int UnsortedDuplicates2(struct Array arr1, int n){
+
+    int i;
+    for(i=0;i<n;i++){
+
+        arr1.H[arr1.A[i]]++;
+    }
+    for(i=0;i<=10; i++){
+
+        if(arr1.H[i] > 1){
+            cout << i << " is appearing " << arr1.H[i] << " times" << endl;
+        }
+    }
+    return 0;
+}
+
 
 int main(){
 
     struct Array arr={{3,6,8,8,10,12,15,15,15,18},10,10};
-    //duplicate(arr, 10);
-    //countDuplicates(arr,10);
+    duplicate(arr, 10);
+    countDuplicates(arr,10);
     Hashduplicates(arr, arr.length );
 
     struct Array arr1 = {{8,3,6,4,6,5,6,8,2,7},10,10};
     UnsortedDuplicates(arr1, 10);
+    UnsortedDuplicates2(arr1, 10);
 
     return 0;
 }
