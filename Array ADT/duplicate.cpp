@@ -9,6 +9,7 @@ struct Array{
     int H[40]={0};
 };
 
+//for SORTED ARRAY METHOD1
 int duplicate(struct Array arr, int n){
 
     int i;
@@ -24,7 +25,7 @@ int duplicate(struct Array arr, int n){
     return 0;
 }
 
-//count duplicates
+//count duplicates for SORTED array METHOD1
 int countDuplicates(struct Array arr, int n){
 
     int i,j;
@@ -43,7 +44,7 @@ int countDuplicates(struct Array arr, int n){
     return 0;
 }
 
-//duplicates using Hash table
+//duplicates using Hash table for SORTED array METHOD2
 int Hashduplicates(struct Array arr, int n){
 
     int i;
@@ -60,6 +61,32 @@ int Hashduplicates(struct Array arr, int n){
     return 0;
 }
 
+//for UNSORTED ARRAY find, count duplicates METHOD1
+int UnsortedDuplicates(struct Array arr1, int n){
+
+    int i,j;
+    for(i=0;i<n;i++){
+
+        int count =1;
+
+        if(arr1.A[i] != -1){
+ 
+            for(j=i+1;j<n;j++){
+
+                if(arr1.A[i] == arr1.A[j]){
+                    count++;
+                    arr1.A[j] = -1;
+                }
+            }
+
+            if(count > 1)
+              cout << arr1.A[i] << " is appearing " << count << " times" << endl;
+        }
+    }
+
+    return 0;
+}
+
 
 int main(){
 
@@ -67,6 +94,9 @@ int main(){
     //duplicate(arr, 10);
     //countDuplicates(arr,10);
     Hashduplicates(arr, arr.length );
+
+    struct Array arr1 = {{8,3,6,4,6,5,6,8,2,7},10,10};
+    UnsortedDuplicates(arr1, 10);
 
     return 0;
 }
