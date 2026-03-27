@@ -42,11 +42,35 @@ int hashPairSum(struct Array arr, int n, int k){
     return 0;
 }
 
+//SORTED ARRAY pair sum using two pointers METHOD1
+int pairsum2(struct Array arr1, int n, int k){
+
+    int i,j;
+    i=0;j=n-1;
+
+    while(i<j){
+
+        if(arr1.A[i]+arr1.A[j] == k){
+          cout << arr1.A[i] << "+" << arr1.A[j] << "=" << k << endl;
+          i++;
+          j--;
+        }
+        else if(arr1.A[i]+arr1.A[j] < k) i++;
+        else j--;
+
+    }
+
+    return 0;
+}
+
 int main(){
 
     struct Array arr={{6,3,8,10,16,7,5,2,9,14},10,10};
-    //pairsum(arr, 10, 10);
+    struct Array arr1={{1,3,4,5,6,8,9,10,12,14},10,10};
+    pairsum(arr, 10, 10);
     hashPairSum(arr,10,10);
+
+    pairsum2(arr1, 10,10);
 
     return 0;
 
