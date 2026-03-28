@@ -48,5 +48,15 @@ int main(){
     cout << "no. of vowels: " << vcount << endl;
     cout << "no. of consonants: " << ccount << endl;
 
+    //counting word in a sentence
+    int word=1;
+    for(i=0;A[i]!='\0';i++){
+
+        if(A[i]==' ' && A[i-1]!= ' '){
+            word++;
+        }
+    }
+    cout << "number of words: " << word << endl;
+
     return 0;
 }
