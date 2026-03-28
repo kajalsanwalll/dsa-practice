@@ -84,5 +84,23 @@ int main(){
     else{
         cout << "invalid name" << endl;
     }
+
+    //reverse a string METHOD1
+    char A[] = "Student";
+    char B[7];
+    cout << "Original string: " << A << endl;
+
+    for(i=0;A[i]!='\0';i++){
+    }
+
+    int j;
+    i=i-1;
+    for(j=0;i>=0;i--,j++){
+        B[j] = A[i];
+    }
+    B[j] = '\0';
+
+    cout << "Reversed string: " << B << endl;
+
     return 0;
 }
