@@ -4,6 +4,26 @@ using namespace std;
 char S[] = "WELCOME";
 char S1[] = "wElCome";
 char A[] = "How are you";
+char name[] = "Namai321";
+
+//function to validate a string(string valid or not)
+int valid(char *name){
+
+    int i;
+
+    for(i=0;name[i]!='\0';i++){
+
+        if(!(name[i]>=65 && name[i]<=90) 
+         && !(name[i]>=97 && name[i]<=122) 
+         && !(name[i]>=48 && name[i]<=57)){
+
+            return 0; // invalid
+        }
+
+    }
+
+    return 1; // valid string
+}
 
 int main(){
 
@@ -58,5 +78,11 @@ int main(){
     }
     cout << "number of words: " << word << endl;
 
+    if(valid(name)){
+        cout << "valid name";
+    }
+    else{
+        cout << "invalid name";
+    }
     return 0;
 }
