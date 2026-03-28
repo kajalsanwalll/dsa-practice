@@ -4,7 +4,7 @@ using namespace std;
 char S[] = "WELCOME";
 char S1[] = "wElCome";
 char A[] = "How are you";
-char name[] = "Namai321";
+char name[] = "Kajal321";
 
 //function to validate a string(string valid or not)
 int valid(char *name){
