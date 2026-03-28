@@ -139,6 +139,7 @@ int main(){
         cout << "X is greater than Y" << endl;
     }
 
+    //palindrome check
     char K[] = "ab1234567890987654321baab1234567890987654321ba";
 
     for(j=0;K[j]!='\0';j++){}
