@@ -102,5 +102,21 @@ int main(){
 
     cout << "Reversed string: " << B << endl;
 
+    // reverse a string METHOD2
+    char t;
+    cout << "normal string: " << name << endl;
+
+    for(j=0;name[j]!='\0';j++){}
+
+    j=j-1;
+
+    for(i=0; i<j;i++,j--){
+
+        t= name[i];
+        name[i]= name[j];
+        name[j] = t;
+    }
+    cout << "reversed array by method 2: " << name << endl;
+
     return 0;
 }
