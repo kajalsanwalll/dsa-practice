@@ -158,5 +158,21 @@ int main(){
         
     }
 
+    //finding duplicates using hash table 
+    char f[] = "finding";
+    int H[26]={0};
+
+    for(i=0;f[i]!='\0';i++){
+        H[f[i]-97]+=1;
+    }
+
+    for(i=0;i<26;i++){
+
+        if(H[i]>1){
+            cout << i+97 << " is appearing " << H[i] << " times." << endl;
+            
+        }
+    }
+
     return 0;
 }
