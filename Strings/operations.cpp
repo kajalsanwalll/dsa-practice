@@ -174,5 +174,20 @@ int main(){
         }
     }
 
+    // finding duplicates with bitsets
+    long int h=0,x=0;
+    for(i=0;f[i]!='\0';i++){
+
+        x=1;
+        x = x << (f[i]-97);
+
+        if((x & h)> 0){
+            cout << f[i] << " is duplicated " << endl;
+
+        }
+        else{
+          h = x | h;
+        }
+    }
     return 0;
 }
