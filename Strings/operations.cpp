@@ -139,5 +139,24 @@ int main(){
         cout << "X is greater than Y" << endl;
     }
 
+    char K[] = "ab1234567890987654321baab1234567890987654321ba";
+
+    for(j=0;K[j]!='\0';j++){}
+
+    for(i=0,j=j-1; i<j; i++,j--){
+
+        if(K[i]!= K[j]){
+            cout << "not a palindrome" << endl;
+            break;
+
+        }
+        else{
+            i++,j--;
+            cout << "a palindrome" << endl;
+            break;
+        }
+        
+    }
+
     return 0;
 }
