@@ -79,10 +79,10 @@ int main(){
     cout << "number of words: " << word << endl;
 
     if(valid(name)){
-        cout << "valid name";
+        cout << "valid name" << endl;
     }
     else{
-        cout << "invalid name";
+        cout << "invalid name" << endl;
     }
     return 0;
 }
