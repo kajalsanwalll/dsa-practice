@@ -118,5 +118,26 @@ int main(){
     }
     cout << "reversed array by method 2: " << name << endl;
 
+    // comparing two strings
+    char X[] = "Painter";
+    char Y[] = "Painting";
+
+    for(i=0;X[i]!= '\0' && Y[j]!= '\0'; j++,i++){
+
+        if(X[i]!= Y[j])
+        break;
+    }
+
+    if(X[i] == Y[j]){
+        cout << "equal strings" << endl;
+    }
+    else if(X[i] < Y[j]){
+        cout << "X is smaller than Y" << endl;
+
+    }
+    else {
+        cout << "X is greater than Y" << endl;
+    }
+
     return 0;
 }
