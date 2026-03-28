@@ -192,8 +192,8 @@ int main(){
     }
 
     // finding if 2 strings are ANAGRAMS or not
-    char N[] = "medical";
-    char C[] = "decimal";
+    char N[] = "ajay";
+    char C[] = "mama";
 
     for(i=0;N[i]!='\0';i++){
 
@@ -201,18 +201,18 @@ int main(){
     }
     for(i=0;C[i]!='\0';i++){
 
-        H[N[i]-97]-= 1;
+        H[C[i]-97]-= 1;
 
-        if((H[N[i] -97]) < 0){
-            cout << "not anagram!" << endl;
-            break;
+    }
+    for(i = 0; i < 26; i++){
+        if(H[i] != 0){
+            cout << "Not anagram!" << endl;
+            return 0;
         }
         
     }
+    cout << "Anagram!" << endl;
 
-    if(C[i] == '\0'){
-        cout << "anagram!" << endl;
-    }
     
     return 0;
 }
