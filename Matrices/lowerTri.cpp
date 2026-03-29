@@ -140,4 +140,23 @@ int main(){
 
     Display(m);
 
+    // class lower triangle
+    int d;
+    cout << "enter dimensions: " ;
+    cin >> d;
+
+    LowerTriangle lm(d);
+    
+    cout << "enter all elements: " << endl;
+    for(i=1;i<=d;i++){
+
+        for(j=1;j<=d;j++){
+            cin >> x;
+            lm.set(i,j,x);
+        }
+    }
+    cout << endl;
+
+    lm.Display();
+
 }
