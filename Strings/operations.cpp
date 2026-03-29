@@ -5,6 +5,7 @@ char S[] = "WELCOME";
 char S1[] = "wElCome";
 char A[] = "How are you";
 char name[] = "Kajal321";
+char S2[] = "ABC";
 
 //function to validate a string(string valid or not)
 int valid(char *name){
@@ -23,6 +24,24 @@ int valid(char *name){
     }
 
     return 1; // valid string
+}
+
+// permutation using swapping
+void perm(char S2[], int l, int h){
+
+    int i;
+    if(l==h){
+        cout << S2 << endl;
+    }
+    else{
+
+        for(i=0;i<=h;i++){
+
+            swap(S2[l],S2[i]);
+            perm(S2,l+1,h);
+            swap(S2[l],S2[i]); //backtrack
+        }
+    }
 }
 
 int main(){
@@ -213,6 +232,8 @@ int main(){
     }
     cout << "Anagram!" << endl;
 
+    //permutation of a string
+    perm( S2,0,2);
     
     return 0;
 }
