@@ -54,6 +54,10 @@ class Diagonal{
         int *A;
 
     public:
+        Diagonal(){
+          n=2; // minimum of 2 if not provided
+          A = new int[2];
+        }
         Diagonal(int n){
             this->n=n;
             A= new int[n]; // dynamic heap array
@@ -112,5 +116,13 @@ int main(){
     set(&m,1,1,5);set(&m,2,2,8);set(&m,3,3,7);set(&m,4,4,12);
     cout << " " << (get(m,4,4)) << endl;
     Display(m);
+
+    Diagonal d(4);
+
+    d.set(1,1,6);
+    d.set(2,2,6);
+    d.set(3,3,6);
+    d.set(4,4,6);
+    d.Display();
 
 }
