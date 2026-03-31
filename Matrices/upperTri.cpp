@@ -11,7 +11,6 @@ struct Matrix{
 void set(struct Matrix *m, int i, int j, int n){
 
     if(i==j){
-        
     }
 
 }
