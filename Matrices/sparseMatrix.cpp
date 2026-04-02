@@ -1,4 +1,5 @@
 #include <iostream>
+#include <stdio.h>
 using namespace std;
 
 struct Element{
@@ -56,6 +57,45 @@ void Display(struct Sparse s){
             
         }
         cout << endl;
+    }
+}
+
+struct Sparse * add(struct Sparse *s1, struct Sparse *s2){
+
+    struct Sparse *sum;
+    int i,j,k;
+    i=j=k=0;
+
+    sum = (struct Sparse *)malloc(sizeof(struct Sparse));
+    sum->e = (struct Element *)malloc((s1->num+s2->num)*sizeof(struct Element));
+
+    while(i<s1->num && j < s2->num){
+
+        //checking row numbers
+        if(s1->e[i].i < s2->e[j].i){
+
+            sum->e[k++] = s1->e[i++];
+        }
+        else if(s1->e[i].i > s2->e[j].i){
+
+            sum->e[k++] = s2->e[j++];
+        }
+
+        //checking column numbers
+        else{
+
+            if(s1->e[i].j < s2->e[j].j){
+
+            sum->e[k++] = s1->e[i++];
+            }
+            else if(s1->e[i].j > s2->e[j].j){
+
+            sum->e[k++] = s2->e[j++];
+            }
+
+        }
+
+        // row and column numbers are equal
     }
 }
 
