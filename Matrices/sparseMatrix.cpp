@@ -93,18 +93,56 @@ struct Sparse * add(struct Sparse *s1, struct Sparse *s2){
             sum->e[k++] = s2->e[j++];
             }
 
-        }
+            // row and column numbers are equal
+            else{
 
-        // row and column numbers are equal
+            sum->e[k] = s1->e[i];
+            sum->e[k++] = s1->e[i++].x + s2->e[j++].x;
+
+            }
+        }
     }
+
+    for(;i<s1->num;i++){
+        sum->e[k++] = s1->e[i];
+    }
+    for(;j<s2->num;j++){
+        sum->e[k++] = s2->e[j];
+    }
+
+    sum->m = s1->m;
+    sum->n = s1->n;
+    sum->num = k;
+
+    return sum;
 }
 
 
 int main(){
 
+    /*
+    cout << "now sparse matrix definition:" << endl;
     struct Sparse s;
     create(&s);
     Display(s);
+
+    */
+
+    
+    struct Sparse s1,s2,*s3;
+
+    create(&s1);
+    create(&s2);
+    s3 = add(&s1,&s2);
+
+    cout << "First matrix: " << endl;
+    Display(s1);
+
+    cout << "Second matrix: " << endl;
+    Display(s2);
+
+    cout << "Sum matrix: " << endl;
+    Display(*s3);
 
     return 0;
 }
