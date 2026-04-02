@@ -66,6 +66,10 @@ struct Sparse * add(struct Sparse *s1, struct Sparse *s2){
     int i,j,k;
     i=j=k=0;
 
+    if(s1->m != s2->m && s1->n != s2->n){
+        return 0;
+    }
+
     sum = (struct Sparse *)malloc(sizeof(struct Sparse));
     sum->e = (struct Element *)malloc((s1->num+s2->num)*sizeof(struct Element));
 
@@ -96,8 +100,12 @@ struct Sparse * add(struct Sparse *s1, struct Sparse *s2){
             // row and column numbers are equal
             else{
 
-            sum->e[k] = s1->e[i];
-            sum->e[k++] = s1->e[i++].x + s2->e[j++].x;
+             sum->e[k].i = s1->e[i].i;
+             sum->e[k].j = s1->e[i].j;
+             sum->e[k].x = s1->e[i].x + s2->e[j].x;
+             i++;
+             j++;
+             k++;
 
             }
         }
@@ -128,7 +136,7 @@ int main(){
 
     */
 
-    
+
     struct Sparse s1,s2,*s3;
 
     create(&s1);
