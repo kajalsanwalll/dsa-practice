@@ -64,6 +64,8 @@ class Sparse{
 int main(){
 
     Sparse s1(5,5,5);
+    s1.read();
+    s1.display();
 
     return 0;
 }
