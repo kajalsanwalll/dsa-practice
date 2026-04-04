@@ -81,7 +81,7 @@ int Add(struct Node *p){
 
 int Max(struct Node *p){
 
-    int m = -32768;
+    int m = INT_MIN;
 
     while(p != 0){
 
