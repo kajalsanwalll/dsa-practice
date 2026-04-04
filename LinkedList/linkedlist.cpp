@@ -67,8 +67,15 @@ int count(struct Node *p){
 
 int Add(struct Node *p){
 
+    int sum=0;
+    
+    while(p != 0){
 
-    return 0;
+        sum+= p->data;
+        p=p->next;
+    }
+
+    return sum;
 }
 
 int main(){
@@ -79,6 +86,7 @@ int main(){
     display(first);
     RDisplay(first);
     cout << "length is: " << count(first) << endl;
+    cout << "sum is: " << Add(first) << endl;
 
     return 0;
 }
