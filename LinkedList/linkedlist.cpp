@@ -40,7 +40,17 @@ void display(struct Node *p){
         p = p->next;             //traversing through Node
 
     }
+    cout << endl;
 
+}
+
+//display linkedlist using recursion
+void RDisplay(struct Node *p){
+
+    if(p != NULL){
+        cout << p->data << endl;
+        RDisplay(p->next);
+    }
 }
 
 int main(){
@@ -49,6 +59,7 @@ int main(){
 
     create(A,5);
     display(first);
+    RDisplay(first);
 
     return 0;
 }
