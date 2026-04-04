@@ -78,6 +78,23 @@ int Add(struct Node *p){
     return sum;
 }
 
+int Max(struct Node *p){
+
+    int m = -32768;
+
+    while(p != 0){
+
+        if(p->data > m){
+            m = p->data;
+
+            p=p->next;
+        }
+
+    }
+
+    return m;
+}
+
 int main(){
 
     int A[] = {3,5,7,10,15};
@@ -87,6 +104,7 @@ int main(){
     RDisplay(first);
     cout << "length is: " << count(first) << endl;
     cout << "sum is: " << Add(first) << endl;
+    cout << "max is: " << Max(first) << endl;
 
     return 0;
 }
