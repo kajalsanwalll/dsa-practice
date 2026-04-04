@@ -1,4 +1,5 @@
 #include <iostream>
+#include <climits>
 using namespace std;
 
 struct Node{
@@ -85,11 +86,29 @@ int Max(struct Node *p){
     while(p != 0){
 
         if(p->data > m){
-            m = p->data;
 
-            p=p->next;
+            m = p->data;
         }
 
+        p=p->next;
+
+    }
+
+    return m;
+}
+
+int Min(struct Node *p){
+
+    int m = INT_MAX;
+
+    while(p != 0){
+
+        if(p->data < m){
+            m = p->data;
+
+        }
+
+        p=p->next;
     }
 
     return m;
@@ -105,6 +124,7 @@ int main(){
     cout << "length is: " << count(first) << endl;
     cout << "sum is: " << Add(first) << endl;
     cout << "max is: " << Max(first) << endl;
+    cout << "min is: " << Min(first) << endl;
 
     return 0;
 }
