@@ -53,6 +53,24 @@ void RDisplay(struct Node *p){
     }
 }
 
+int count(struct Node *p){
+
+    int l=0;
+
+    while(p != 0){
+        l++;
+        p=p->next;
+    }
+
+    return l;
+}
+
+int Add(struct Node *p){
+
+
+    return 0;
+}
+
 int main(){
 
     int A[] = {3,5,7,10,15};
@@ -60,6 +78,7 @@ int main(){
     create(A,5);
     display(first);
     RDisplay(first);
+    cout << "length is: " << count(first) << endl;
 
     return 0;
 }
