@@ -93,7 +93,6 @@ int Max(struct Node *p){
         p=p->next;
 
     }
-
     return m;
 }
 
