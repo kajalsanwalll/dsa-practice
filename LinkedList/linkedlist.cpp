@@ -123,7 +123,7 @@ int main(){
     cout << "length is: " << count(first) << endl;
     cout << "sum is: " << Add(first) << endl;
     cout << "max is: " << Max(first) << endl;
-    cout << "min is: " << Min(first) << endl;
+    cout << "min is: " << Min(first) ;
 
     return 0;
 }
