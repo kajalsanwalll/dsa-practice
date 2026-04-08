@@ -115,11 +115,18 @@ int Min(struct Node *p){
 
 struct Node * LSearch(struct Node *p, int key){
 
+    struct Node *q;  // another pointer for move to front
+
     while(p != NULL){
         if(key == p->data){
+
+            q->next = p->next;
+            p->next = first;
+            first = p;
             return p;
         }
         else{
+            q=p;
             p= p->next;
         }
     }
@@ -139,13 +146,14 @@ int main(){
     cout << "max is: " << Max(first) << endl;
     cout << "min is: " << Min(first) <<endl;
 
-    temp = LSearch(first,16);
+    temp = LSearch(first,10);
     if(temp){
         cout << "key is found " << temp->data << endl;
     }
     else{
         cout << "key not found" << endl; 
     }
+    display(first);
 
     return 0;
 }
