@@ -113,8 +113,22 @@ int Min(struct Node *p){
     return m;
 }
 
+struct Node * LSearch(struct Node *p, int key){
+
+    while(p != NULL){
+        if(key == p->data){
+            return p;
+        }
+        else{
+            p= p->next;
+        }
+    }
+    return NULL;
+}
+
 int main(){
 
+    struct Node *temp;
     int A[] = {3,5,7,10,15};
 
     create(A,5);
@@ -123,7 +137,15 @@ int main(){
     cout << "length is: " << count(first) << endl;
     cout << "sum is: " << Add(first) << endl;
     cout << "max is: " << Max(first) << endl;
-    cout << "min is: " << Min(first) ;
+    cout << "min is: " << Min(first) <<endl;
+
+    temp = LSearch(first,16);
+    if(temp){
+        cout << "key is found " << temp->data << endl;
+    }
+    else{
+        cout << "key not found" << endl; 
+    }
 
     return 0;
 }
