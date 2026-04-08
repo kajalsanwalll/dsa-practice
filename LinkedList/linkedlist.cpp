@@ -115,7 +115,7 @@ int Min(struct Node *p){
 
 struct Node * LSearch(struct Node *p, int key){
 
-    struct Node *q;  // another pointer for move to front
+    struct Node *q=NULL;  // another pointer for move to front
 
     while(p != NULL){
         if(key == p->data){
