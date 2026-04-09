@@ -274,7 +274,12 @@ int main(){
     Delete(first,4);
     display(first);
 
-    cout << isSorted(first) << endl;
+    if(isSorted(first)){
+        cout << "sorted" << endl;
+    }
+    else {
+        cout << " not sorted " << endl;
+    }
 
     return 0;
 }
