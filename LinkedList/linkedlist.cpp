@@ -204,16 +204,20 @@ int main(){
     cout << "max is: " << Max(first) << endl;
     cout << "min is: " << Min(first) <<endl;
 
-    temp = LSearch(first,10);
-    if(temp){
-        cout << "key is found " << temp->data << endl;
-    }
-    else{
-        cout << "key not found" << endl; 
-    }
-    display(first);
-    Insert(first,3,9);
-    cout << endl;
+   // temp = LSearch(first,10);
+   // if(temp){
+   //     cout << "key is found " << temp->data << endl;
+   // }
+   // else{
+   //     cout << "key not found" << endl; 
+   // }
+    //display(first);
+    //Insert(first,3,9);
+   // cout << endl;
+    //display(first);
+
+    cout << "sorted insertion: " << endl;
+    SortedInsert(first,10);
     display(first);
 
     return 0;
