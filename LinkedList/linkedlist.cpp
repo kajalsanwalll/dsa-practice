@@ -163,6 +163,34 @@ void Insert(struct Node *p1,int pos, int x){
     }
 }
 
+void SortedInsert(struct Node *p, int x){
+
+    struct Node *t , *q = NULL;
+    t = new Node;
+    t->data = x;
+    t->next = NULL;
+
+    if(first == NULL){
+        first=t;
+    }
+    else{
+
+        while(p && p->data < x){
+            q=p;
+            p=p->next;
+        }
+        if(p==first){
+            t->next = first;
+            first=t;
+        }
+        else{
+
+            t->next = q->next;
+            q->next=t;
+        }
+    }
+}
+
 int main(){
 
     struct Node *temp;
