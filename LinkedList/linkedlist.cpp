@@ -241,6 +241,26 @@ int isSorted(struct Node *p){
     return true;
 }
 
+void RemoveDuplicates(struct Node *p){
+
+    struct Node *q = p->next;
+
+    while(q!= NULL){
+
+        if(p->data != q->data){
+
+            p = q;
+            q = q->next;
+        }
+        else{
+
+            p->next = q->next;
+            delete q;
+            q= p->next;
+        }
+    }
+}
+
 int main(){
 
     struct Node *temp;
@@ -270,9 +290,9 @@ int main(){
     SortedInsert(first,10);
     display(first);
 
-    cout << "delete 4th index" << endl;
-    Delete(first,4);
-    display(first);
+    //cout << "delete 4th index" << endl;
+    //Delete(first,4);
+    //display(first);
 
     if(isSorted(first)){
         cout << "sorted" << endl;
@@ -280,6 +300,9 @@ int main(){
     else {
         cout << " not sorted " << endl;
     }
+
+    RemoveDuplicates(first);
+    display(first);
 
     return 0;
 }
