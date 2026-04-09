@@ -133,9 +133,14 @@ struct Node * LSearch(struct Node *p, int key){
     return NULL;
 }
 
-void Insert(struct Node *p,int pos, int x){
+void Insert(struct Node *p1,int pos, int x){
 
-    struct Node *t, *p;
+    struct Node *t;
+
+    if(pos < 0 || pos > count(p1)){
+        return;
+    }
+
     if(pos == 0){
         t = new Node;
         t->data = x;
@@ -144,16 +149,16 @@ void Insert(struct Node *p,int pos, int x){
     }
     else if(pos > 0){
 
-        p= first;
-        for(int i=0; i< pos-1 && p;i++){
-            p= p->next;
+        p1= first;
+        for(int i=0; i< pos-1 && p1;i++){
+            p1= p1->next;
         }
 
-        if(p){
+        if(p1){
             t= new Node;
             t->data = x;
-            t->next = p->next;
-            p->next = t;
+            t->next = p1->next;
+            p1->next = t;
         }
     }
 }
@@ -178,6 +183,9 @@ int main(){
     else{
         cout << "key not found" << endl; 
     }
+    display(first);
+    Insert(first,3,9);
+    cout << endl;
     display(first);
 
     return 0;
