@@ -224,6 +224,23 @@ int Delete(struct Node *p, int index){
 
 }
 
+int isSorted(struct Node *p){
+
+    int x = INT_MIN;
+
+    while (p != NULL)
+    {
+        if(p->data < x){
+            return false;
+        }
+
+        x = p->data;
+        p = p->next;
+
+    }
+    return true;
+}
+
 int main(){
 
     struct Node *temp;
@@ -256,6 +273,8 @@ int main(){
     cout << "delete 4th index" << endl;
     Delete(first,4);
     display(first);
+
+    cout << isSorted(first) << endl;
 
     return 0;
 }
