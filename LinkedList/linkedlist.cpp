@@ -284,6 +284,21 @@ void Reverse1(struct Node *p){
     
 }
 
+void Reverse2(struct Node *p){
+    
+    struct Node *q = NULL;
+    struct Node *r = NULL;
+
+    while (p != NULL)
+    {
+        r = q;
+        q = p;
+        p = p->next;
+        q->next = r;
+    }
+    first = q;
+}
+
 int main(){
 
     struct Node *temp;
@@ -328,7 +343,7 @@ int main(){
     display(first);
 
     cout << "reverse linked list" << endl;
-    Reverse1(first);
+    Reverse2(first);
     display(first);
 
     return 0;
