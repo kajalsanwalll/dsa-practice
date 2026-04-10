@@ -262,6 +262,7 @@ void RemoveDuplicates(struct Node *p){
     }
 }
 
+//reversing elements 
 void Reverse1(struct Node *p){
     
     int *A, i=0;
@@ -284,6 +285,7 @@ void Reverse1(struct Node *p){
     
 }
 
+// reverse using sliding pointers
 void Reverse2(struct Node *p){
     
     struct Node *q = NULL;
@@ -297,6 +299,21 @@ void Reverse2(struct Node *p){
         q->next = r;
     }
     first = q;
+}
+
+//recursive reverse of linked list
+void Reverse3(struct Node *q, struct Node *p){
+
+    if(p)
+    {
+        Reverse3(p, p->next);
+        p->next = q;
+    }
+    else{
+
+        first = q;
+    }
+    
 }
 
 int main(){
@@ -343,7 +360,7 @@ int main(){
     display(first);
 
     cout << "reverse linked list" << endl;
-    Reverse2(first);
+    Reverse3(NULL, first);
     display(first);
 
     return 0;
