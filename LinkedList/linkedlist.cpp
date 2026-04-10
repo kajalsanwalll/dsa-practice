@@ -1,5 +1,6 @@
 #include <iostream>
 #include <climits>
+#include <stdio.h>
 using namespace std;
 
 struct Node{
@@ -261,6 +262,28 @@ void RemoveDuplicates(struct Node *p){
     }
 }
 
+void Reverse1(struct Node *p){
+    
+    int *A, i=0;
+    struct Node *q= p;
+    A = new int[count(p)];
+
+    while (q!=NULL)
+    {
+        A[i] = q->data;
+        q= q->next;
+        i++;
+    }
+    q=p; i--;
+
+    while(q!=NULL){
+        q->data = A[i];
+        q = q->next;
+        i--;
+    }
+    
+}
+
 int main(){
 
     struct Node *temp;
@@ -302,6 +325,10 @@ int main(){
     }
 
     RemoveDuplicates(first);
+    display(first);
+
+    cout << "reverse linked list" << endl;
+    Reverse1(first);
     display(first);
 
     return 0;
