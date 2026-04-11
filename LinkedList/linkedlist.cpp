@@ -358,7 +358,6 @@ int main(){
 
     RemoveDuplicates(first);
     display(first);
-
     cout << "reverse linked list" << endl;
     Reverse3(NULL, first);
     display(first);
