@@ -51,6 +51,44 @@ void RDisplay(struct Node *p){
     flag = 0;
 }
 
+void Insert(struct Node *p, int index, int x){
+
+    struct Node *t;
+    int i;
+
+    if(index == 0){
+
+        t = new Node;
+        t->data = x;
+
+        if(Head == NULL){
+            Head = t;
+            Head->next = Head;
+        }
+        else{
+
+            while (p->next != Head)
+            {
+                p = p->next;
+            }
+            p->next = t;
+            t->next = Head;
+            Head = t;
+            
+        }
+    }
+    else{
+
+        for(i=0; i< index - 1; i++) p = p->next;
+
+        t= new Node;
+        t->data = x;
+
+        t->next = p->next;
+        p->next = t;
+    }
+}
+
 int main(){
 
     int A[] = {2,4,6,8,10};
