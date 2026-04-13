@@ -96,6 +96,7 @@ void LinkedList::Insert(int index, int x){
 
     if(index == 0){
 
+        t->next = first;
         first = t;
     }
     else{
@@ -156,9 +157,9 @@ int main(){
 
     cout << "length of linkedlist: ";
     cout << l.Length() << endl;
+    l.Display();
 
-    cout << "insert at 0th index: ";
-    l.Insert(5,10);
+    l.Insert(4,10);
     l.Display();
 
     return 0;
