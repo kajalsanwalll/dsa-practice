@@ -390,21 +390,54 @@ void Merge(struct Node *p, struct Node *q){
     if(q) last->next = q;
 }
 
+int isLoop(struct Node *f){
+
+    struct Node *p, *q;
+    p=q=f;   
+
+    do{
+
+        p = p->next;
+        q = q->next;
+        q = q?q->next:q;
+
+    }while(p && q && p != q);
+
+    if( p == q){
+        return 1;   // true
+    }
+    else{
+        return 0; //false
+    }
+
+}
+
 int main(){
 
-    struct Node *temp;
+    struct Node *t1,*t2;
+struct Node *temp;
+
     int A[] = {3,5,7,10,15};
     int B[] = {2,6,9,14,25};
-
     create(A,5);
+
     cout << "first linkedlist" << endl;
     display(first);
-    RDisplay(first);
-    cout << "length is: " << count(first) << endl;
+
+    t1 = first->next->next;
+    t2 = first->next->next->next->next;
+    t2->next = t1; //loop made 
+
+    cout << "is loop: " << endl;
+    cout <<  isLoop(first) << endl;
+
+
+  //  RDisplay(first);
+  /*  cout << "length is: " << count(first) << endl;
     cout << "sum is: " << Add(first) << endl;
     cout << "max is: " << Max(first) << endl;
     cout << "min is: " << Min(first) <<endl;
-
+  */
     create2(B,5);
     cout << "second linkedlist" << endl;
     display(second);
