@@ -160,6 +160,7 @@ int main(){
     l.Display();
 
     l.Insert(4,10);
+    cout << "insert 10: " << endl;
     l.Display();
 
     return 0;
