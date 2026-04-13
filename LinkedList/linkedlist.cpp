@@ -8,7 +8,7 @@ struct Node{
     int data;
     struct Node *next;     //self referential structure
 
-}*first = NULL;
+}*first = NULL, *second = NULL, *third = NULL;
 
 void create(int A[], int n){
 
@@ -20,6 +20,30 @@ void create(int A[], int n){
     first->next = NULL;
 
     last = first;
+
+    for(i=1;i<n;i++){
+
+        t = new Node;
+        t->data = A[i];
+        t->next = NULL;
+        last->next = t;
+        
+        last = t;
+    }
+
+
+}
+
+void create2(int A[], int n){
+
+    int i;
+    struct Node *t,*last;
+
+    second= new Node;
+    second->data = A[0];
+    second->next = NULL;
+
+    last = second;
 
     for(i=1;i<n;i++){
 
@@ -320,14 +344,20 @@ int main(){
 
     struct Node *temp;
     int A[] = {3,5,7,10,15};
+    int B[] = {1,2,3,4,5};
 
     create(A,5);
+    cout << "first linkedlist" << endl;
     display(first);
     RDisplay(first);
     cout << "length is: " << count(first) << endl;
     cout << "sum is: " << Add(first) << endl;
     cout << "max is: " << Max(first) << endl;
     cout << "min is: " << Min(first) <<endl;
+
+    create2(B,5);
+    cout << "second linkedlist" << endl;
+    display(second);
 
    // temp = LSearch(first,10);
    // if(temp){
