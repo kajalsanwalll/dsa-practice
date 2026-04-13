@@ -385,6 +385,9 @@ void Merge(struct Node *p, struct Node *q){
             last->next =NULL;
         }
     }
+
+    if(p) last->next = p;
+    if(q) last->next = q;
 }
 
 int main(){
@@ -418,33 +421,37 @@ int main(){
    // cout << endl;
     //display(first);
 
-    cout << "sorted insertion: " << endl;
-    SortedInsert(first,10);
-    display(first);
+   // cout << "sorted insertion: " << endl;
+    // SortedInsert(first,10);
+   // display(first);
 
     //cout << "delete 4th index" << endl;
     //Delete(first,4);
     //display(first);
 
-    if(isSorted(first)){
+   /* if(isSorted(first)){
         cout << "sorted" << endl;
     }
     else {
         cout << " not sorted " << endl;
     }
+  */
+   // RemoveDuplicates(first);
+   // display(first);
+   // cout << "reverse linked list" << endl;
+  //  Reverse3(NULL, first);
+  //  display(first);
 
-    RemoveDuplicates(first);
-    display(first);
-    cout << "reverse linked list" << endl;
-    Reverse3(NULL, first);
-    display(first);
-
-    Concat(first,second);
+   /* Concat(first,second);
 
     cout << "concatinated of first and second: " << endl;
     display(third);
     cout << endl;
-
+  */
+    cout << "merged linked list:" << endl;
+    Merge(first,second);
+    display(third);
+    
     
     return 0;
 }
