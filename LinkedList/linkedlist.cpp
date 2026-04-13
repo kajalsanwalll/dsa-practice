@@ -352,11 +352,46 @@ void Concat(struct Node *p, struct Node *q){
     
 }
 
+void Merge(struct Node *p, struct Node *q){
+
+    struct Node *last;
+
+    if(p->data < q->data){
+
+        third = last = p;
+        p = p->next;
+        third->next = NULL;
+    }
+    else{
+
+        third = last = q;
+        q = q->next;
+        third->next = NULL;
+    }
+
+    while(p && q){
+
+        if(p->data < q->data){
+            last->next = p;
+            last=p;
+            p = p->next;
+            last->next =NULL;
+        }
+        else {
+
+            last->next =q;
+            last=q;
+            q = q->next;
+            last->next =NULL;
+        }
+    }
+}
+
 int main(){
 
     struct Node *temp;
     int A[] = {3,5,7,10,15};
-    int B[] = {1,2,3,4,5};
+    int B[] = {2,6,9,14,25};
 
     create(A,5);
     cout << "first linkedlist" << endl;
