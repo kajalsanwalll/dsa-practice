@@ -340,6 +340,18 @@ void Reverse3(struct Node *q, struct Node *p){
     
 }
 
+void Concat(struct Node *p, struct Node *q){
+
+    third = p;
+
+    while (p->next != NULL)
+    {
+        p = p->next;
+    }
+    p->next = q;
+    
+}
+
 int main(){
 
     struct Node *temp;
@@ -391,6 +403,12 @@ int main(){
     cout << "reverse linked list" << endl;
     Reverse3(NULL, first);
     display(first);
+
+    Concat(first,second);
+
+    cout << "concatinated of first and second: " << endl;
+    display(third);
+    cout << endl;
 
     
     return 0;
