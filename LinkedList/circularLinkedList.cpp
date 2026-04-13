@@ -36,12 +36,28 @@ void Display(struct Node *h){
 
 }
 
+//recursive display
+void RDisplay(struct Node *p){
+
+    static int flag = 0;
+
+    if(p!= Head || flag == 0){
+
+        flag = 1;
+        cout << p->data << " ";
+
+        RDisplay(p->next);
+    }
+    flag = 0;
+}
+
 int main(){
 
     int A[] = {2,4,6,8,10};
     create(A,5);
 
     Display(Head);
+    RDisplay(Head);
 
     return 0;
 }
