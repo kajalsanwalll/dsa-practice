@@ -145,5 +145,10 @@ int LinkedList::Delete(int index){
 int main(){
 
 
+    int A[] = {1,2,3,4,5};
+    LinkedList l(A, 5);
+
+    l.Display();
+
     return 0;
 }
