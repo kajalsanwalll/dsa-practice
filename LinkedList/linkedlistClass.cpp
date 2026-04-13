@@ -144,10 +144,21 @@ int LinkedList::Delete(int index){
 
 int main(){
 
-
     int A[] = {1,2,3,4,5};
     LinkedList l(A, 5);
 
+    cout << "original linked list: ";
+    l.Display();
+
+    cout << "delete index: ";
+    cout << l.Delete(3) << endl;
+    l.Display();
+
+    cout << "length of linkedlist: ";
+    cout << l.Length() << endl;
+
+    cout << "insert at 0th index: ";
+    l.Insert(5,10);
     l.Display();
 
     return 0;
