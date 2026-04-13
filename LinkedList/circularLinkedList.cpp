@@ -51,10 +51,29 @@ void RDisplay(struct Node *p){
     flag = 0;
 }
 
+int Length(struct Node *p){
+
+    int len = 0;  
+    
+    do{
+
+        len++;
+        p= p->next;
+
+    }while(p != Head);
+
+    return len;
+
+}
+
 void Insert(struct Node *p, int index, int x){
 
     struct Node *t;
     int i;
+
+    if(index < 0 || index > Length(p)){
+        return;
+    }
 
     if(index == 0){
 
@@ -95,6 +114,8 @@ int main(){
     create(A,5);
 
     Display(Head);
+
+    Insert(Head, 3, 7);
     RDisplay(Head);
 
     return 0;
