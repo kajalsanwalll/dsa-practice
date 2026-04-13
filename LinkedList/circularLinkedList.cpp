@@ -25,8 +25,21 @@ void create(int A[], int n){
     }
 }
 
+void Display(struct Node *h){
+
+    do{
+        cout << h->data;
+        h = h->next;
+    }while(h != Head);
+    
+    cout << endl;
+
+}
+
 int main(){
 
+    int A[] = {2,4,6,8,10};
+    create(A,5);
 
     return 0;
 }
