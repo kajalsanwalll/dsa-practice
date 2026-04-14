@@ -76,6 +76,8 @@ void insert(struct Node *p, int index, int x){
 
             p = p->next;
         }
+        t = new Node;
+        t->data = x;
         t->next = p->next;
         t->prev = p;
         if(p->next){
@@ -89,6 +91,8 @@ int main(){
 
     int A[]= {10,20,30,40,50};
     create(A, 5);
+
+    insert(first, 3, 7);
 
     cout << "length of linked list is: " << Length(first) << " " << endl;
     display(first);
