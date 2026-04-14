@@ -108,6 +108,49 @@ void Insert(struct Node *p, int index, int x){
     }
 }
 
+int Delete(struct Node *p, int index){
+
+    struct Node *q;
+    int i,x;
+
+    if(index < 0 || index > Length(Head)){
+        return -1;
+    }
+
+    if(index ==1){
+
+        while(p->next != Head){
+            p= p->next;
+        }
+
+        x = Head->data;
+        if(Head == p){
+           delete Head;
+           Head = NULL;
+        }
+        else{
+
+            p->next = Head->next;
+            delete Head;
+            Head = p->next;
+        }
+    }
+    else{
+
+        for(i=0; i < index -2; i++){
+
+            p = p->next;
+        }
+        q = p->next;
+        p->next = q->next;
+        x = q->data;
+        delete q;
+    }
+
+    return x;
+
+}
+
 int main(){
 
     int A[] = {2,4,6,8,10};
@@ -117,6 +160,10 @@ int main(){
 
     Insert(Head, 3, 7);
     RDisplay(Head);
+    cout << endl;
 
+    Delete(Head,1);
+    RDisplay(Head);
+    cout << endl;
     return 0;
 }
