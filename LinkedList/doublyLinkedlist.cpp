@@ -87,15 +87,54 @@ void insert(struct Node *p, int index, int x){
     }
 }
 
+int Delete(struct Node *p, int index){
+
+    struct Node *q;
+    int x = -1, i;
+
+    if(index < 0 || index > Length(p)){
+        return -1;
+    } 
+
+    if(index == 1){
+        
+        first = first->next;
+        if(first){
+            first->prev = NULL;
+        }
+
+        x= p->data;
+        delete p;
+
+    }
+    else{
+        for( i=0; i< index -1; i++){
+            p = p->next;
+        }
+
+        p->prev->next = p->next;
+
+        if(p->next){
+            p->next->prev = p->prev;
+        }
+
+        x = p->data;
+        delete p;
+    }
+    return x;
+}
+
 int main(){
 
     int A[]= {10,20,30,40,50};
     create(A, 5);
 
     insert(first, 3, 7);
+    Delete(first,1);
 
     cout << "length of linked list is: " << Length(first) << " " << endl;
     display(first);
+
 
     return 0;
 }
