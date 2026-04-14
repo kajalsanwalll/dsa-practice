@@ -31,8 +31,35 @@ void create(int A[], int n){
     }
 }
 
+void display(struct Node *p){
+
+    while(p){
+
+        cout << p->data << " ";
+        p = p->next;
+    }
+    cout << endl;
+}
+
+int Length(struct Node *p){
+
+    int sum = 0;
+    while(p){
+        
+        sum+= 1;
+        p = p->next;
+
+    }
+    return sum;
+}
+
 int main(){
 
+    int A[]= {10,20,30,40,50};
+    create(A, 5);
+
+    cout << "length of linked list is: " << Length(first) << " " << endl;
+    display(first);
 
     return 0;
 }
