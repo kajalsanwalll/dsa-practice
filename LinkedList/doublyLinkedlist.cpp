@@ -53,6 +53,38 @@ int Length(struct Node *p){
     return sum;
 }
 
+void insert(struct Node *p, int index, int x){
+
+    struct Node *t = new Node;
+    int i;
+
+    if(index < 0 || index > Length(p)){
+        return;
+    }
+    if(index ==0){
+
+        t = new Node;
+        t->data = x;
+        t->prev = NULL;
+        t->next = first;
+        first->prev = t;
+        first = t;
+    }
+    else{
+
+        for(i=0; i< index -1; i++){
+
+            p = p->next;
+        }
+        t->next = p->next;
+        t->prev = p;
+        if(p->next){
+            p->next->prev = t;
+        }
+        p->next = t;
+    }
+}
+
 int main(){
 
     int A[]= {10,20,30,40,50};
