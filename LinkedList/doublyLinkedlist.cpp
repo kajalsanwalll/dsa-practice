@@ -124,6 +124,23 @@ int Delete(struct Node *p, int index){
     return x;
 }
 
+void Reverse(struct Node *p){
+
+    struct Node *temp;
+
+    while(p){
+
+        temp = p->next;
+        p-> next = p->prev;
+        p->prev = temp;
+        p = p->prev;
+
+        if(p!= NULL && p-> next == NULL){
+            first = p;
+        }
+    }
+}
+
 int main(){
 
     int A[]= {10,20,30,40,50};
@@ -135,6 +152,8 @@ int main(){
     cout << "length of linked list is: " << Length(first) << " " << endl;
     display(first);
 
+    Reverse(first);
+    display(first);
 
     return 0;
 }
