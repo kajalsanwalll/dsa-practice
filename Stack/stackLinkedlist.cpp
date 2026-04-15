@@ -20,7 +20,27 @@ void push(int x){
 
         t->data = x;
         t->next = top;
+        top = t;
     }
+}
+
+int pop(){
+
+    struct Node *t;
+    int x = -1;
+
+    if(top == NULL){
+        cout << "stack is empty!" << endl;
+    }
+    else{
+
+        t = top;
+        top = top->next;
+        x = t->data;
+        delete t;   
+
+    }
+    return x;
 }
 
 int main(){
