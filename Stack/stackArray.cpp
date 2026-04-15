@@ -55,6 +55,20 @@ int pop(struct Stack *st){
     return x;
 }
 
+int peek(struct Stack st, int index){
+
+    int x = -1;
+
+    if(st.Top - index + 1 < 0){
+        cout << "invalid index." << endl;
+    }
+    else{
+        x = st.s[st.Top - index + 1];
+    }
+
+    return x;
+}
+
 int main(){
 
     struct Stack st;
