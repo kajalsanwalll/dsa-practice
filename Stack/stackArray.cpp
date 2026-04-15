@@ -11,8 +11,13 @@ struct Stack{
 
 void create(struct Stack *st){
 
-    
+    cout << "enter size: " ;
+    cin >> st->size;
+    st->Top = -1;
+    st->s = new int[st->size];
 }
+
+
 
 
 int main(){
