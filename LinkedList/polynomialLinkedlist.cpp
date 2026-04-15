@@ -22,12 +22,13 @@ void create(){
     for(i=0; i< num ; i++){
         
         t = new Node;
-        cin >> t->coeff >> t->exp;
+        cin >> t->coeff ;
+        cin >> t->exp;
         t->next = NULL;
 
         if(poly == NULL){
             
-            poly = t = last;
+            poly = last = t;
         }
         else{
 
@@ -40,9 +41,10 @@ void create(){
 
 void Display(struct Node *p){
 
-    int x;
     while(p){
-        cout << x << "+" << p->coeff << p->exp;
+        cout << p->coeff << "x^" << p->exp;
+        if(p->next != NULL)
+            cout << " + ";
         p = p->next;
     }
     cout << endl;
