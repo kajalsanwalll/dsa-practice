@@ -56,7 +56,7 @@ void display(){
     cout << endl;
 }
 
-int isBalanced(char *exp){
+int isBalanced(const char *exp){
 
     int i;
 
@@ -65,13 +65,31 @@ int isBalanced(char *exp){
         if(exp[i] == '('){
             push(exp[i]);
         }
+        else if(exp[i] == ')'){
+
+            if(top == NULL){
+                return 0;
+            }
+            pop();
+        }
+    }
+
+    if(top == NULL ){
+
+        return 1;  //true
+    }
+    else{
+
+        return 0; //false
     }
 
 }
 
 int main(){
 
-    char *exp= "((a+b) * (c+d))";
+    const char *exp="((a+b)*(c+d)";
+
+    cout << isBalanced(exp) << endl;
 
     return 0;
 }
