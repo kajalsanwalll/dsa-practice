@@ -17,7 +17,14 @@ void create(struct Stack *st){
     st->s = new int[st->size];
 }
 
+void display(struct Stack *st){
 
+    int i;
+    for(i=st->Top;i>=0;i--){
+        cout << st->s[i];
+    }
+    cout << endl;
+}
 
 
 int main(){
