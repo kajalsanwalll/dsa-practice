@@ -52,9 +52,27 @@ int Stack::pop(){
     return x;
 }
 
+void Stack::display(){
+
+    Node *p = top;
+    while(p != NULL){
+
+        cout << p->data << " ";
+        p = p->next;
+    }
+    cout << endl;
+}
+
 
 int main(){
 
+    Stack stk;
+    stk.push(10);
+    stk.push(7);
+    stk.push(20);
+
+    cout << stk.pop() << endl; 
+    stk.display();
 
     return 0;
 }
