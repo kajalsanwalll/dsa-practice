@@ -29,7 +29,27 @@ void Stack::push(int x){
     else{
 
         t->data = x;
+        t->next = top;
+        top = t;
     }
+}
+
+int Stack::pop(){
+
+    int x = -1;
+
+    if(top == NULL){
+
+        cout << "stack is empty!" << endl;
+    }
+    else{
+
+        x = top->data;
+        Node *t = top;
+        top = top->next;
+        delete t;
+    }
+    return x;
 }
 
 
