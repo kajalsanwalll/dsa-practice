@@ -105,8 +105,11 @@ int main(){
     push(&st, 20);
     push(&st, 10);
     push(&st, 50);
+    display(&st);
 
-    cout << pop(&st) << endl;
+    cout << "peek value at index 3: " << peek(st, 3) << endl;
+
+    cout << "pop value " << pop(&st) << endl;
 
     display(&st);
 
