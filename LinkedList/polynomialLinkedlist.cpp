@@ -9,7 +9,7 @@ struct Node{
 
 } *poly = NULL;
 
-void create(struct Node *p, int x){
+void create(){
 
     struct Node *t,*last;
     int num, i;
@@ -22,7 +22,7 @@ void create(struct Node *p, int x){
     for(i=0; i< num ; i++){
         
         t = new Node;
-        cin >> t->coeff, t->exp;
+        cin >> t->coeff >> t->exp;
         t->next = NULL;
 
         if(poly == NULL){
@@ -38,12 +38,22 @@ void create(struct Node *p, int x){
 
 }
 
+void Display(struct Node *p){
 
+    int x;
+    while(p){
+        cout << x << "+" << p->coeff << p->exp;
+        p = p->next;
+    }
+    cout << endl;
+}
 
 
 int main(){
 
 
+    create();
+    Display(poly);
 
     return 0;
 }
