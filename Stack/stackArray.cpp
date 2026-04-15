@@ -48,7 +48,7 @@ int pop(struct Stack *st){
     }
     else{
 
-        st->s[st->Top] = x;
+        x = st->s[st->Top];
         st->Top--;
 
     }
@@ -63,6 +63,8 @@ int main(){
     push(&st, 20);
     push(&st, 10);
     push(&st, 50);
+
+    cout << pop(&st) << endl;
 
     display(&st);
 
