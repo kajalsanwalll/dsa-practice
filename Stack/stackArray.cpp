@@ -69,6 +69,34 @@ int peek(struct Stack st, int index){
     return x;
 }
 
+int isEmpty(struct Stack st){
+
+    if(st.Top == -1){
+
+        return 1;
+    }
+
+    return 0;    
+}
+
+int isFull(struct Stack st){
+
+    if(st.Top == st.size -1 ){
+
+        return 1;
+    }
+    return 0;
+}
+
+int stackTop(struct Stack st){
+
+    if(!isEmpty(st)){
+        return st.s[st.Top];
+    }
+
+    return -1;
+}
+
 int main(){
 
     struct Stack st;
