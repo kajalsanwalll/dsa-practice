@@ -43,6 +43,18 @@ int pop(){
     return x;
 }
 
+void display(){
+
+    struct Node *p;
+    p = top;
+
+    while(p != NULL){
+
+        cout << p->data << " ";
+    }
+    cout << endl;
+}
+
 int main(){
 
 
