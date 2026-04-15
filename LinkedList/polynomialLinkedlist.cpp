@@ -50,12 +50,27 @@ void Display(struct Node *p){
     cout << endl;
 }
 
+long Eval(struct Node *p, int x){
+
+    long val= 0;
+
+    while(p){
+
+        val += p->coeff * pow(x, p->exp);
+        p = p->next;
+    }
+
+    return val;
+}
+
 
 int main(){
 
 
     create();
     Display(poly);
+
+    cout << Eval(poly, 1) << endl;
 
     return 0;
 }
