@@ -26,6 +26,20 @@ void display(struct Stack *st){
     cout << endl;
 }
 
+void push(struct Stack *st, int x){
+
+    if(st->Top == st->size - 1){
+
+        cout << "stack overflow" << endl;
+    }
+    else{
+
+        st->Top++;
+        st->s[st->Top] = x;
+    }
+}
+
+
 
 int main(){
 
