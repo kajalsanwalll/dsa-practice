@@ -167,7 +167,7 @@ char* InfixToPostfix2(const char *infix){
     return postfix;
 }
 
-int Eval(char *postfix){
+int Eval(const char *postfix){
 
     int i = 0;
     int x1,x2,r;
@@ -176,7 +176,7 @@ int Eval(char *postfix){
 
         if(isOperand(postfix[i])){
 
-            push(postfix[i]);
+            push(postfix[i] - '0');
         }
         else{
 
@@ -235,7 +235,8 @@ int main(){
 // for evaluation
 int main(){
 
-    char *postfix = "234*+82/-";
+    const char *postfix = "234*+82/-";
+    cout << "result is: " << Eval(postfix) << endl;
 
     return 0;
 }
