@@ -46,6 +46,17 @@ int dequeue(struct Queue *q){
     return x;
 }
 
+void display(struct Queue q){
+
+    int i;
+
+    for(i= q.front+1; i< q.rear; i++){
+        cout << q.Q[i] << " ";
+    }
+    cout << endl;
+
+}
+
 int main(){
 
     struct Queue q;
