@@ -4,11 +4,11 @@ using namespace std;
 
 struct Node{    
 
-    char data;
+    int data;
     struct Node *next;  
 } *top;
 
-void push(char x){
+void push(int x){
 
     struct Node *t;
     t = new Node;
@@ -25,10 +25,10 @@ void push(char x){
     }
 }
 
-char pop(){
+int pop(){
 
     struct Node *t;
-    char x = -1;
+    int x = -1;
 
     if(top == NULL){
         cout << "stack is empty!" << endl;
@@ -167,6 +167,43 @@ char* InfixToPostfix2(const char *infix){
     return postfix;
 }
 
+int Eval(char *postfix){
+
+    int i = 0;
+    int x1,x2,r;
+
+    for(i=0 ; postfix[i] != '\0'; i++){
+
+        if(isOperand(postfix[i])){
+
+            push(postfix[i]);
+        }
+        else{
+
+            x2= pop();
+            x1= pop();
+            switch (postfix[i])
+            {
+             case '+':
+                r = x1+x2;
+                break;
+             case '-':
+                r = x1-x2;
+                break;
+             case '*':
+                r = x1*x2;
+                break;
+             case '/':
+                r = x1/x2;
+                break;
+
+            }
+            push(r);    
+        }
+    }
+    return top->data;
+}
+
 /* int main(){
 
     const char *infix = "a+b*c-d/e";
@@ -179,6 +216,9 @@ char* InfixToPostfix2(const char *infix){
 }
     */
 
+
+// for paranthesis and associativity  
+/* 
 int main(){
     top = NULL;        // IMPORTANT
     push('#');         // base symbol
@@ -187,6 +227,15 @@ int main(){
 
     char *postfix = InfixToPostfix(infix);
     cout << postfix << endl;
+
+    return 0;
+}
+*/ 
+
+// for evaluation
+int main(){
+
+    char *postfix = "234*+82/-";
 
     return 0;
 }
