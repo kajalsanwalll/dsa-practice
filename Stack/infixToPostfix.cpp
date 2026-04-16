@@ -67,9 +67,20 @@ int pre(char x){
     return 0;
 }
 
+int isOperand(char x){
+
+    if(x == '+' || x == '-' || x == '*' || x == '/'){
+        return 1;
+    }
+    return 0;
+
+}
+
 int main(){
 
-    
+    char *infix = "a+b*c";
+
+    char *postfix;
 
     return 0;
 }
