@@ -62,5 +62,14 @@ int main(){
     struct Queue q;
     create(&q,5);
 
+    enqueue(&q,3);
+    enqueue(&q,3);
+    enqueue(&q,3);
+    enqueue(&q,3);
+    display(q);
+    dequeue(&q);
+    display(q);
+    
+
     return 0;
 }
