@@ -29,6 +29,23 @@ void enqueue(int x){
     }
 }
 
+int dequeue(){
+
+    int x = -1;
+    struct Node *t;
+
+    if(front == NULL){
+        cout << "queue is empty!";
+    }
+    else{
+        x = front->data;
+        t = front;
+        front = front->next;
+        delete t;
+    }
+    return x;
+}
+
 
 int main(){
 
