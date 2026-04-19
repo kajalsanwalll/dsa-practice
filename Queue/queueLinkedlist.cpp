@@ -1,4 +1,5 @@
 #include <iostream>
+#include <stdlib.h>
 using namespace std;
 
 struct Node{
@@ -48,17 +49,24 @@ int dequeue(){
 
 void Display(){
 
-    struct Node *p;
+    struct Node *p = front;
 
     while(p!= NULL){
 
-        cout << p->data;
+        cout << p->data << " ";
         p = p->next;
     }
     cout << endl;
 }
 
 int main(){
+
+    enqueue(1);
+    enqueue(1);
+    enqueue(1);
+    enqueue(1);
+
+    Display();
 
 
     return 0;
