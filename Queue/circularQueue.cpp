@@ -48,11 +48,13 @@ int dequeue(struct Queue *q){
 
 void display(struct Queue q){
 
-    int i;
+    int i=q.front+1;
 
-    for(i= q.front+1; i< q.rear; i++){
-        cout << q.Q[i] << " ";
+    do{
+        cout << q.Q[i];
+        i = (i+1)%q.size;
     }
+    while(i != (q.rear+1)%q.size);
     cout << endl;
 
 }
