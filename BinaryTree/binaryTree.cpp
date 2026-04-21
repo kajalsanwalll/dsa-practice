@@ -113,11 +113,39 @@ void preorder(struct TreeNode *p){
     }
 }
 
+//to display tree in In- order
+void InOrder(struct TreeNode *p){
+
+    
+    if(p){
+        
+        InOrder(p->lchild);
+        cout << p->data << " ";
+        InOrder(p->rchild);
+    }
+}
+
+void postOrder(struct TreeNode *p){
+
+    
+    if(p){
+        
+        postOrder(p->lchild);
+        postOrder(p->rchild);
+        cout << p->data << " ";
+    }
+}
+
 int main(){
 
     Treecreate();
 
     preorder(root);
+    cout << endl;
+    postOrder(root);
+    cout << endl;
+    InOrder(root);
+    cout << endl;
 
     return 0;
 }
