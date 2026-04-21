@@ -60,16 +60,55 @@ int isEmpty(struct Queue q){
 struct TreeNode *root = NULL;
 
 //creating binary tree 
-void create(){
+void Treecreate(){
 
     struct TreeNode *p,*t;
+    int x;
+    struct Queue q;
+    create(&q, 100);
+
+    cout << "enter root value";
+    cin >> x;
+    root = new TreeNode;
+    root->data = x;
+    root->lchild = root->rchild = NULL;
+    enqueue(&q,*root);
+    
+    while (! isEmpty(q))
+    {
+        p = dequeue(&q);
+        cout << "enter left child value:";
+        cin >> x;
+        if(x != -1){
+
+            t = new TreeNode;
+            t->data = x;
+            t->lchild = t->rchild = NULL;
+            p->lchild = t;
+            enqueue(&q, *t);
+        }
+
+        cout << "enter right child value:";
+        cin >> x;
+        if(x != -1){
+
+            t = new TreeNode;
+            t->data = x;
+            t->lchild = t->rchild = NULL;
+            p->rchild = t;
+            enqueue(&q, *t);
+        }
+    }
+    
 }
+
 
 
 int main(){
 
+    Treecreate();
 
-
+    preorder(root);
 
     return 0;
 }
