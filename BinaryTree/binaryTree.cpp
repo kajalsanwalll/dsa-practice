@@ -1,12 +1,18 @@
 #include <iostream>
 using namespace std;
 
+struct TreeNode{
+
+    struct TreeNode *lchild;
+    int data;
+    struct TreeNode *rchild;
+};
 struct Queue{
 
     int size;
     int front;
     int rear;
-    int *Q;
+    TreeNode **Q;
 
 };
 
@@ -14,11 +20,11 @@ void create(struct Queue *q, int size){
 
     q->size = size;
     q->front = q->rear = 0;
-    q->Q = new int[q->size];
+    q->Q = new TreeNode*[q->size];
 
 }
 
-void enqueue(struct Queue *q, int x){
+void enqueue(struct Queue *q, TreeNode x){
 
     if((q->rear+1)% q->size == q->front){
         cout << "queue is full" << endl;
@@ -26,13 +32,13 @@ void enqueue(struct Queue *q, int x){
     else{
 
         q->rear = (q->rear+1)% q->size;
-        q->Q[q->rear] = x;
+        q->Q[q->rear] = &x;
     }
 }
 
-int dequeue(struct Queue *q){
+TreeNode* dequeue(struct Queue *q){
 
-    int x = -1;
+    TreeNode* x = NULL;
 
     if(q->front == q->rear){
 
@@ -51,7 +57,13 @@ int isEmpty(struct Queue q){
     return q.front == q.rear;
 }
 
+struct TreeNode *root = NULL;
 
+//creating binary tree 
+void create(){
+
+    struct TreeNode *p,*t;
+}
 
 
 int main(){
