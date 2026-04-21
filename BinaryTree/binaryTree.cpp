@@ -46,6 +46,11 @@ int dequeue(struct Queue *q){
     return x;
 }
 
+int isEmpty(struct Queue q){
+
+    return q.front == q.rear;
+}
+
 
 
 
