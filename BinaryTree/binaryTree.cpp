@@ -24,7 +24,7 @@ void create(struct Queue *q, int size){
 
 }
 
-void enqueue(struct Queue *q, TreeNode x){
+void enqueue(struct Queue *q, TreeNode *x){
 
     if((q->rear+1)% q->size == q->front){
         cout << "queue is full" << endl;
@@ -32,7 +32,7 @@ void enqueue(struct Queue *q, TreeNode x){
     else{
 
         q->rear = (q->rear+1)% q->size;
-        q->Q[q->rear] = &x;
+        q->Q[q->rear] = x;
     }
 }
 
@@ -67,17 +67,17 @@ void Treecreate(){
     struct Queue q;
     create(&q, 100);
 
-    cout << "enter root value";
+    cout << "enter root value: ";
     cin >> x;
     root = new TreeNode;
     root->data = x;
     root->lchild = root->rchild = NULL;
-    enqueue(&q,*root);
+    enqueue(&q,root);
     
     while (! isEmpty(q))
     {
         p = dequeue(&q);
-        cout << "enter left child value:";
+        cout << "enter left child value of " << p->data << endl;
         cin >> x;
         if(x != -1){
 
@@ -85,10 +85,10 @@ void Treecreate(){
             t->data = x;
             t->lchild = t->rchild = NULL;
             p->lchild = t;
-            enqueue(&q, *t);
+            enqueue(&q, t);
         }
 
-        cout << "enter right child value:";
+        cout << "enter right child value of " << p->data << endl;
         cin >> x;
         if(x != -1){
 
@@ -96,13 +96,22 @@ void Treecreate(){
             t->data = x;
             t->lchild = t->rchild = NULL;
             p->rchild = t;
-            enqueue(&q, *t);
+            enqueue(&q, t);
         }
     }
     
 }
 
+//to display tree in pre- order
+void preorder(struct TreeNode *p){
 
+    
+    if(p){
+        cout << p->data << " ";
+        preorder(p->lchild);
+        preorder(p->rchild);
+    }
+}
 
 int main(){
 
