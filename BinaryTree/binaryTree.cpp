@@ -173,6 +173,26 @@ int countNodes(struct TreeNode *root){
 
 }
 
+int height(struct TreeNode *root){
+
+    int x=0,y=0;
+
+    if(root == 0){
+        return 0;
+    }
+
+    x = height(root->lchild);
+    y = height(root->rchild);
+
+    if(x > y){
+        return x+1;
+    }
+    else {
+        return y+1; 
+    }
+
+}
+
 int main(){
 
     Treecreate();
@@ -189,6 +209,9 @@ int main(){
     cout << "level: ";
     LevelOrder(root);
     cout << endl;
+
+    cout << "count: " << countNodes(root) << endl;
+    cout << "height: " << height(root) << endl;
 
     return 0;
 }
