@@ -98,12 +98,12 @@ int main(){
 
     Inorder(root);
     
-    temp = Search(5);
+    temp = Search(15);
     if(temp != NULL){
         cout << "element " << temp->data << " is found" << endl;
     }
     else{
-        cout << "element " << temp->data << " isnt found" << endl;
+        cout << "element isnt found" << endl;
     }
 
     return 0;
