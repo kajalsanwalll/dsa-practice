@@ -102,6 +102,9 @@ int main(){
     if(temp != NULL){
         cout << "element " << temp->data << " is found" << endl;
     }
+    else{
+        cout << "element " << temp->data << " isnt found" << endl;
+    }
 
     return 0;
 }
