@@ -21,6 +21,7 @@ void Insert(int key){
         p = new Node;
         p->data = key;
         p->lchild = p->rchild = NULL;
+        root = p;
         return;
     }
     while(t != NULL){
@@ -57,7 +58,7 @@ void Inorder(struct Node *p){
     if(p){
 
         Inorder(p->lchild);
-        cout << p->data;
+        cout << p->data << " ";
         Inorder(p->rchild);
     }
     
@@ -67,10 +68,10 @@ int main(){
 
     Insert(9);
     Insert(7);
-    Insert(9);
-    Insert(7);
-    Insert(9);
-    Insert(7);
+    Insert(5);
+    Insert(8);
+    Insert(2);
+    Insert(0);
 
     Inorder(root);
 
