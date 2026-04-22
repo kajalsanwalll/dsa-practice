@@ -64,7 +64,30 @@ void Inorder(struct Node *p){
     
 }
 
+struct Node* Search(int key){
+
+    struct Node *t = root;
+
+    while( t != NULL){
+
+        if(key == t->data){
+            cout << endl;
+            return t;
+        }
+        else if(key < t->data){
+            t = t->lchild;
+        }
+        else{
+            t = t->rchild;
+        }
+    }
+    cout << endl;
+    return NULL;
+}
+
 int main(){
+
+    struct Node *temp;
 
     Insert(9);
     Insert(7);
@@ -74,6 +97,11 @@ int main(){
     Insert(0);
 
     Inorder(root);
+    
+    temp = Search(5);
+    if(temp != NULL){
+        cout << "element " << temp->data << " is found" << endl;
+    }
 
     return 0;
 }
