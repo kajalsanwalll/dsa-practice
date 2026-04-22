@@ -52,6 +52,17 @@ void Insert(int key){
 
 }
 
+void Inorder(struct Node *p){
+
+    if(p){
+
+        Inorder(p->lchild);
+        cout << p->data;
+        Inorder(p->rchild);
+    }
+    
+}
+
 int main(){
 
 
