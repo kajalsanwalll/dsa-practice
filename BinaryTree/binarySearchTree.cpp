@@ -65,6 +65,14 @@ void Inorder(struct Node *p){
 
 int main(){
 
+    Insert(9);
+    Insert(7);
+    Insert(9);
+    Insert(7);
+    Insert(9);
+    Insert(7);
+
+    Inorder(root);
 
     return 0;
 }
