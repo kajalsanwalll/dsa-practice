@@ -144,7 +144,7 @@ void LevelOrder(struct TreeNode *root){
     struct Queue q;
     create(&q,100);
 
-    cout << root->data; // print root's data
+    cout << root->data << " "; // print root's data
     enqueue(&q,root);
 
     while (!isEmpty(q))
@@ -160,8 +160,6 @@ void LevelOrder(struct TreeNode *root){
         }
     
     }
-    
-
 
 }
 
@@ -169,11 +167,17 @@ int main(){
 
     Treecreate();
 
+    cout << "pre: " ;
     preorder(root);
     cout << endl;
+    cout << "post: " ;
     postOrder(root);
     cout << endl;
+    cout << "in order: ";
     InOrder(root);
+    cout << endl;
+    cout << "level: ";
+    LevelOrder(root);
     cout << endl;
 
     return 0;
