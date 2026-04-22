@@ -53,6 +53,28 @@ void Insert(int key){
 
 }
 
+struct Node *RInsert(struct Node *p, int key){
+
+    struct Node *t=NULL;
+    
+    if(p == NULL){
+
+        t = new Node;
+        t->data = key;
+        t->lchild = t->rchild = NULL;
+        return t;
+    }
+
+    if(key < p->data){
+        p->lchild = RInsert(p->lchild, key);
+    }
+    else if(key > p->data){
+        p->rchild = RInsert(p->rchild, key);
+    }
+
+    return p;
+}
+
 void Inorder(struct Node *p){
 
     if(p){
