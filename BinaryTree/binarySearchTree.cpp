@@ -182,6 +182,8 @@ struct Node *Delete(struct Node *p, int key){
         }
     }
 
+    return p;
+
 }
 
 int main(){
@@ -194,10 +196,11 @@ int main(){
     Insert(8);
     Insert(2);
     Insert(0);
+    Delete(root,0);
 
     Inorder(root);
     
-    temp = Search(15);
+    temp = Search(5);
     if(temp != NULL){
         cout << "element " << temp->data << " is found" << endl;
     }
