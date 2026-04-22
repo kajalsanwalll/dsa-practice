@@ -125,6 +125,8 @@ void InOrder(struct TreeNode *p){
     }
 }
 
+
+// post order traversal of binary tree
 void postOrder(struct TreeNode *p){
 
     
@@ -134,6 +136,33 @@ void postOrder(struct TreeNode *p){
         postOrder(p->rchild);
         cout << p->data << " ";
     }
+}
+
+//level order traversal of binary tree
+void LevelOrder(struct TreeNode *root){
+
+    struct Queue q;
+    create(&q,100);
+
+    cout << root->data; // print root's data
+    enqueue(&q,root);
+
+    while (!isEmpty(q))
+    {
+        root = dequeue(&q);
+        if(root->lchild){
+            cout << root->lchild->data << " ";
+            enqueue(&q,root->lchild);
+        }
+        if(root->rchild){
+            cout << root->rchild->data << " ";
+            enqueue(&q,root->rchild);
+        }
+    
+    }
+    
+
+
 }
 
 int main(){
