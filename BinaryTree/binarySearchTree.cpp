@@ -127,6 +127,24 @@ int height(struct Node *root){
 
 }
 
+struct Node *InPre(struct Node *p){
+    while (p && p->rchild != NULL)
+    {
+        p = p->rchild;
+    }
+    return p;
+    
+}
+
+struct Node *InSucc(struct Node *p){
+    while (p && p->lchild != NULL)
+    {
+        p = p->lchild;
+    }
+    return p;
+    
+}
+
 struct Node *Delete(struct Node *p, int key){
 
     struct Node *q;
