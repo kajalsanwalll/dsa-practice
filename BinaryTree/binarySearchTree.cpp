@@ -56,7 +56,7 @@ void Insert(int key){
 struct Node *RInsert(struct Node *p, int key){
 
     struct Node *t=NULL;
-    
+
     if(p == NULL){
 
         t = new Node;
@@ -105,6 +105,65 @@ struct Node* Search(int key){
     }
     cout << endl;
     return NULL;
+}
+
+int height(struct Node *root){
+
+    int x=0,y=0;
+
+    if(root == 0){
+        return 0;
+    }
+
+    x = height(root->lchild);
+    y = height(root->rchild);
+
+    if(x > y){
+        return x+1;
+    }
+    else {
+        return y+1; 
+    }
+
+}
+
+struct Node *Delete(struct Node *p, int key){
+
+    struct Node *q;
+
+    if(p == NULL){
+        return NULL;
+    }
+    if(p->lchild == NULL && p->rchild == NULL){
+
+        if(p == root){
+            root = NULL;
+        }
+        delete p;
+        return NULL;
+    }
+
+    if(key < p->data){
+        p->lchild = Delete(p->lchild, key);
+    }
+    else if(key > p->data){
+        p->rchild = Delete(p->rchild, key);
+    }
+    else{
+        if(height(p->lchild) > height(p->rchild)){
+            //inorder predecessor on left child 
+            q = InPre(p->lchild);
+            p->data = q->data;
+            p->lchild = Delete(p->lchild, q->data);
+        }
+        else{
+            //inorder successor on right child
+            q = InSucc(p->rchild);
+            p->data = q->data;
+            p->rchild = Delete(p->rchild, q->data);
+        }
+    }
+
 }
 
 int main(){
