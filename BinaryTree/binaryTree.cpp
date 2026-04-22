@@ -163,6 +163,16 @@ void LevelOrder(struct TreeNode *root){
 
 }
 
+int countNodes(struct TreeNode *root){
+
+    if(root){
+        return countNodes(root->lchild) + countNodes(root->rchild) + 1;
+    }
+
+    return 0;
+
+}
+
 int main(){
 
     Treecreate();
