@@ -17,6 +17,16 @@ int NodeHeight(struct Node *p){
     return hl>hr?hl+1:hr+1;
 }
 
+//balance factor
+int balanceFactor(struct Node *p){
+
+    int hl,hr;
+    hl = p && p->lchild?p->lchild->height: 0;
+    hr = p && p->rchild?p->rchild->height: 0;
+
+    return hl-hr;
+}
+
 //recursive insertion of avl trees
 struct Node *RInsert(struct Node *p, int key){
 
