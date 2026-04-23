@@ -151,8 +151,10 @@ struct Node *RInsert(struct Node *p, int key){
 int main(){
 
     root = RInsert(root,50);
-    RInsert(root,10);
-    RInsert(root,20);
+    root = RInsert(root,10);
+    root = RInsert(root,20);
+
+    cout << root->data << endl;
 
 
     return 0;
