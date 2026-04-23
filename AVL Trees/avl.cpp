@@ -46,8 +46,23 @@ struct Node *LLRotation(struct Node *p){
 
 struct Node *LRRotation(struct Node *p){
 
+    struct Node *pl = p->lchild;
+    struct Node *plr = pl->rchild;
 
-    return NULL;
+    pl->rchild = plr->lchild;
+    p->lchild = plr->rchild;
+
+    plr->lchild =pl;
+    plr->rchild = p;
+
+    plr->height = NodeHeight(pl);
+    p->height = NodeHeight(p);
+    plr->height = NodeHeight(plr);
+
+    if(root == p){
+        root = plr;
+    }
+    return plr;
 }
 
 struct Node *RRRotation(struct Node *p){
