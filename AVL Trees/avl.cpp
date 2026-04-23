@@ -47,18 +47,19 @@ struct Node *LLRotation(struct Node *p){
 struct Node *LRRotation(struct Node *p){
 
 
-    
+    return NULL;
 }
 
 struct Node *RRRotation(struct Node *p){
 
 
-    
+    return NULL;
 }
 
 struct Node *RLRotation(struct Node *p){
 
 
+    return NULL;
     
 }
 
@@ -107,6 +108,9 @@ struct Node *RInsert(struct Node *p, int key){
 
 int main(){
 
+    root = RInsert(root,7);
+    RInsert(root,6);
+    RInsert(root,2);
 
 
     return 0;
