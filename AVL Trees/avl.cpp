@@ -85,9 +85,24 @@ struct Node *RRRotation(struct Node *p){
 
 struct Node *RLRotation(struct Node *p){
 
+    struct Node *pr = p->rchild;
+    struct Node *prl = pr->lchild;
 
-    return NULL;
-    
+    pr->lchild = prl->rchild;
+    p->rchild = prl->lchild;
+
+    prl->rchild = pr;
+    prl->lchild = p;
+
+    pr->height = NodeHeight(pr);
+    p->height = NodeHeight(p);
+    prl->height = NodeHeight(prl);
+
+    if(root == p){
+        root = prl;
+    }
+
+    return prl;
 }
 
 //recursive insertion of avl trees
