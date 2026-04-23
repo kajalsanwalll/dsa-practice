@@ -123,9 +123,9 @@ struct Node *RInsert(struct Node *p, int key){
 
 int main(){
 
-    root = RInsert(root,7);
-    RInsert(root,6);
-    RInsert(root,2);
+    root = RInsert(root,50);
+    RInsert(root,10);
+    RInsert(root,20);
 
 
     return 0;
