@@ -8,6 +8,15 @@ struct Node{
     struct Node *rchild;
 }*root = NULL;
 
+int NodeHeight(struct Node *p){
+
+    int hl,hr;
+    hl = p && p->lchild?p->lchild->height: 0;
+    hr = p && p->rchild?p->rchild->height: 0;
+
+    return hl>hr?hl+1:hr+1;
+}
+
 //recursive insertion of avl trees
 struct Node *RInsert(struct Node *p, int key){
 
@@ -29,7 +38,7 @@ struct Node *RInsert(struct Node *p, int key){
         p->rchild = RInsert(p->rchild, key);
     }
 
-    p->height = NodeHeight();
+    p->height = NodeHeight(p);
     return p;
 }
 
