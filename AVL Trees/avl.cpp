@@ -27,6 +27,41 @@ int balanceFactor(struct Node *p){
     return hl-hr;
 }
 
+struct Node *LLRotation(struct Node *p){
+
+    struct Node *pl = p->lchild;
+    struct Node *plr = pl->rchild;
+
+    pl->rchild = p;
+    p->lchild = plr;
+    p->height = NodeHeight(p);
+    pl->height = NodeHeight(pl);
+
+    if(root == p){
+        root = pl;
+    }
+
+    return pl;
+}
+
+struct Node *LRRotation(struct Node *p){
+
+
+    
+}
+
+struct Node *RRRotation(struct Node *p){
+
+
+    
+}
+
+struct Node *RLRotation(struct Node *p){
+
+
+    
+}
+
 //recursive insertion of avl trees
 struct Node *RInsert(struct Node *p, int key){
 
