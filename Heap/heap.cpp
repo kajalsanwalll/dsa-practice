@@ -58,7 +58,13 @@ int main(){
         Insert(H,i);
     }
 
-    cout << "deleted value is: " << Delete(H,7) << endl;
+   // cout << "deleted value is: " << Delete(H,7) << endl;
+   // cout << "deleted value is: " << Delete(H,6) << endl;
+
+    //for heap sort, delete all elements from heap
+    for(i=7;i>1;i--){
+        Delete(H,i);
+    }
 
     for(i=1;i<=7;i++){
         cout << H[i] << " ";
