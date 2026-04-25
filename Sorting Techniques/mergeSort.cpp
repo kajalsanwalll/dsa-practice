@@ -49,11 +49,34 @@ void IMergeSort(int A[], int n){
 
 }
 
+//recursive merge sort function
+void RMergeSort(int A[], int l, int h){
+
+    int mid;
+    if(l<h){
+
+        mid = (l+h)/2; 
+        RMergeSort(A,l,mid);  //left side
+        RMergeSort(A,mid+1,h);  //right side
+        Merge(A,l,mid,h);
+
+    }
+}
+
 int main(){
 
     int A[] = {11,13,7,12,16,9,24,5,10,3,INT32_MAX}, n = 11,i;
     IMergeSort(A,n);
+    
+    //display for iterative version
+    for(i=0;i<10;i++){
+        cout << A[i] << " ";
+    }
+    cout << endl;
 
+    RMergeSort(A,0,10);
+
+    //display for recursive version
     for(i=0;i<10;i++){
         cout << A[i] << " ";
     }
