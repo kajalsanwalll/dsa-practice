@@ -17,22 +17,27 @@ int Partition(int A[], int l, int h){
         }
 
     }while(i<j);
-    swap(A[pivot],A[j]);
+    swap(A[l],A[j]);
 
     return j;
 }
 
 //quick sort recursive function
-void QuickSort(int A[], int n){
+void QuickSort(int A[], int l, int h){
 
-    
+    int j;
+    if(l<h){
+        j = Partition(A,l,h);  //j is in middle now 
+        QuickSort(A,l,j);      // sorting left side wala :low se mid(j) tak
+        QuickSort(A,j+1,h);   // sorting mid(j) se right side wala : high
+    }
+
 }
 
 int main(){
 
-    int i;
-    int A[] = {11,13,7,12,16,9,24,5,10,3,INT_MAX}, n = 11;
-    Partition(A,11,3);
+    int A[] = {11,13,7,12,16,9,24,5,10,3,INT32_MAX}, n = 11,i;
+    QuickSort(A,0,n-1);
 
     for(i=0;i<10;i++){
         cout << A[i] << " ";
