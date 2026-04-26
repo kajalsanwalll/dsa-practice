@@ -21,14 +21,23 @@ int probe(int H[], int key){
 void Insert(int H[], int key){
 
     int index = Hash(key);
-    
-
+    if(H[index]!=0){
+        index = probe(H,key);
+    }
+    H[index] = key;
 
 }
+
+
 
 int main(){
 
     int HT[10];
+
+    Insert(HT,12);
+    Insert(HT,4);
+    Insert(HT,9);
+    Insert(HT,14);
 
     return 0;
 }
